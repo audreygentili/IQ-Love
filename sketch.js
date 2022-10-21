@@ -88,6 +88,14 @@ function rotationL() {
 	}
 }
 
+function keyPressed() {
+  if (keyCode === LEFT_ARROW) {
+    rotationL();
+  } else if (keyCode === RIGHT_ARROW) {
+    rotationR();
+  }
+}
+
 function draw() { 
   fill(0);
   strokeWeight(1);
@@ -120,7 +128,7 @@ function draw() {
   mirror.size(200,100);
   mirror.mousePressed();
 
-  piece10.afficher();
+  piece1.afficher();
   
   /*
   //piece verte claire
