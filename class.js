@@ -55,6 +55,26 @@ class Piece3 extends Piece {
 				this.p1[3] += 125;this.p1[4] += -125;this.p1[5] += 0;
 				this.p2[0] += 125;this.p2[1] += -125;
 				this.p4[0] += 0;this.p4[1] += -250;        
+			if(pieces[selected] == 1 || pieces[selected] == 2 ){
+				j1 += 125;
+			}else{
+				j1 -= 125;
+			}
+			if(pieces[selected] == 2 || pieces[selected] == 3 ){
+				i1 += 125;
+			}else{
+				i1 -= 125;
+			}
+			if(pieces[selected] == 4){
+				t1 -= 125;v1 -= 250;w1 -= 125;x1 -= 375;
+			}else if(pieces[selected] == 1){
+				u1 += 125;v1 -= 125; w1 += 250;y1 += 375;
+			}else if(pieces[selected] == 2){
+				t1 += 125;v1 += 250;w1 += 125;x1 += 375;
+			}else if(pieces[selected] == 3){
+				u1 -= 125;v1 += 125; w1 -= 250;y1 -= 375;
+			}
+			break;
 			}
 			case 7:
 			if (this.orientation == "o") {
