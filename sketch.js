@@ -64,7 +64,7 @@ function selectedPiece() {
 	sX = mouseX;
 	sY = mouseY;
 	for (let i = 0; i < pieces.length; i++) {
-		if (sX >= pieces[i].p2[0] && sX <= pieces[i].p2[0] + 125 && sY >= pieces[i].p2[1] && sY <= pieces[i].p2[1] + 125) {
+		if (sX >= pieces[i].p1[0] && sX <= pieces[i].p1[0] + 125 && sY >= pieces[i].p1[1] && sY <= pieces[i].p1[1] + 125) {
 			selected = i+1;
 			print("selectionnee : "+selected);
 		}
