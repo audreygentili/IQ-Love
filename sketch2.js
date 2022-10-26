@@ -201,7 +201,7 @@ function rL() {
       break
       
     case 2:
-      if(pieces[selected] == 4){
+      /*if(pieces[selected] == 4){
         print('4')
         i3 += 125;j3 += 250;u3 += 125;v3 -=125;w3 +=250;b3-=125;c3-=125;z3 -= 125;x3+=125;
 
@@ -215,7 +215,7 @@ function rL() {
         i3 += 250;j3-=125;t3 += 125;v3 += 250;w3+=125;a3 += 125; y3-= 125;b3-=125;c3+=125;
       }
 
-      break
+      break*/
       
     case 3:
       if(pieces[selected] == 4){
