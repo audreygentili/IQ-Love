@@ -1,5 +1,5 @@
 var mirror_checked = false;
-var selected = 2;
+var selected = null;
 var pieces = [];
 var basex, basey;
 
@@ -22,10 +22,10 @@ function setup() {
 	piece5 = new Piece5(5, 5, "o", color(88,0,138), [455,80,125,125], [580,330,580,205, 455,205], [705,205,580,205,580,330], [705,205,580,205,580,80], [455,205,455,80,330,80]);
 	//new Piece5(5, 5, "o", color(88,0,138), [205,330,330,205,330,330], [205,330,330,455,330,330], [330,330,125,125], [330,330,330,205,455,330], [455,330,455,455,580,455]);
 	//rouge
-	piece6 = new Piece3(6, 3, "n", color(255,0,0),[80,455,125,125], [205,455,125,125], [205,580,80,580,80,705]);
+	piece6 = new Piece3(6, 3, "n", color(255,0,0),[80,455,125,125], [205,455,125,125], [80,330,80,455,205,455]);
 	//new Piece3(6, 3, "o", color(255,0,0),[330,455,125,125], [455,455,125,125], [455,455,580,455,580,330]);
 	//bleu clair
-	piece7 = new Piece3(7, 3, "o", color(83,225,230), [205,330,125,125],  [455,455,330,455,330,330], [205,455,205,330,80,330]);
+	piece7 = new Piece3(7, 3, "o", color(83,225,230), [205,330,125,125],  [330,330,330,455,455,455], [205,455,205,330,80,330]);
 	//new Piece3(7, 3, "o", color(83,225,230),[205,455,330,455,330,330], [330,330,125,125], [455,455,455,330,580,330]);
 	//vert foncé
 	piece8 = new Piece3(8, 3, "e", color(2,122,36), [205,580,125,125], [80,580,125,125], [330,705,455,705,330,580]);
@@ -98,18 +98,17 @@ function clipPiece() {
 	sY = mouseY;
 }
 
-function mouseReleased() {
+/*function mouseReleased() {
 	if (mouseX > 50 && mouseX < 750 && mouseY > 50 && mouseY < 625) {
 		print('release');
 		clipPiece();
 		pieceSelected = selected;
 	}
-}
+}*/
 
 function rotationR() {
 	print("rotationR");
 	for (let i = 0; i < pieces.length; i++) {
-		print(pieces[i].nom+" et "+selected);
 		if (pieces[i].nom == selected) {
 			print("rotationR sur : "+selected);
 			pieces[i].rotationR();
@@ -120,7 +119,6 @@ function rotationR() {
 function rotationL() {
 	print("rotationL");
 	for (let i = 0; i < pieces.length; i++) {
-		print(pieces[i].nom+" et "+selected);
 		if (pieces[i].nom == selected) {
 			print("rotationL sur : "+selected);
 			pieces[i].rotationL();
@@ -176,16 +174,16 @@ function draw() {
 		rotate_right.show();
 	  }
 
-	piece1.afficher();
+	/*piece1.afficher();
 	piece2.afficher();
 	piece3.afficher();
 	piece4.afficher();
-	piece5.afficher();
-	piece6.afficher();
-	piece7.afficher();
-	//piece8.afficher();
-	piece9.afficher();
-	piece10.afficher();
+	piece5.afficher();*/
+	//piece6.afficher();
+	//piece7.afficher();
+	piece8.afficher();
+	/*piece9.afficher();
+	piece10.afficher();*/
 }
 
 /*
