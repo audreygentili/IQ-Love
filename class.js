@@ -1721,12 +1721,12 @@ class Piece4 extends Piece {
 					this.orientation = "n";
 					this.p3[1] -= 125;this.p3[2] += 250;this.p3[3] -= 125;this.p3[4] += 125;
 					this.p2[0] -= 125;this.p2[1] += 125;
-					this.p4[1] -= 125;this.p4[2] += 125;this.p4[3] -= 250;this.p4[5] -= 375;
+					this.p4[1] += 125;this.p4[2] -= 125;this.p4[3] += 250;this.p4[5] += 375;
 				} else if (this.orientation == "n") {
 					this.orientation = "e";
 					this.p3[0] += 125;this.p3[2] += 125;this.p3[3] += 250;this.p3[5] += 125;
 					this.p2[0] -= 125;this.p2[1] -= 125;
-					this.p4[1] -= 125;this.p4[2] += 125;this.p4[3] -= 250;this.p4[5] -= 375;
+					this.p4[0] -= 125;this.p4[2] -= 250;this.p4[3] -= 125;this.p4[4] -= 375;
 				}  else if (this.orientation == "e") {
 					this.orientation = "s";
 					this.p3[1] += 125;this.p3[2] -= 250;this.p3[3] += 125;this.p3[4] -= 125;
@@ -1736,7 +1736,7 @@ class Piece4 extends Piece {
 					this.orientation = "o"; 
 					this.p3[0] -= 125;this.p3[2] -= 125;this.p3[3] -= 250;this.p3[5] -= 125;
 					this.p2[0] += 125;this.p2[1] += 125;  
-					this.p4[1] -= 125;this.p4[2] += 125;this.p4[3] -= 250;this.p4[5] -= 375;    
+					this.p4[0] += 125;this.p4[2] += 250;this.p4[3] += 125;this.p4[4] += 375;    
 				}
 				break;
 			case 3:
@@ -1744,18 +1744,22 @@ class Piece4 extends Piece {
 					this.orientation = "n";
 					this.p3[1] -= 125;this.p3[2] += 250;this.p3[3] -= 125;this.p3[4] += 125;
 					this.p2[0] -= 125;this.p2[1] += 125;
+					this.p4[0] -= 250;this.p4[1] -= 125;this.p4[2] -= 250;this.p4[3] += 125;this.p4[4] -= 125;
 				} else if (this.orientation == "n") {
 					this.orientation = "e";
 					this.p3[0] += 125;this.p3[2] += 125;this.p3[3] += 250;this.p3[5] += 125;
 					this.p2[0] -= 125;this.p2[1] -= 125;
+					this.p4[0] += 125;this.p4[1] -= 250;this.p4[2] -= 125;this.p4[3] -= 250;this.p4[5] -= 125;
 				}  else if (this.orientation == "e") {
 					this.orientation = "s";
 					this.p3[1] += 125;this.p3[2] -= 250;this.p3[3] += 125;this.p3[4] -= 125;
 					this.p2[0] += 125;this.p2[1] -= 125;
+					this.p4[0] += 250;this.p4[1] += 125;this.p4[2] += 250;this.p4[3] -= 125;this.p4[4] += 125;
 				} else if (this.orientation == "s") {
 					this.orientation = "o"; 
 					this.p3[0] -= 125;this.p3[2] -= 125;this.p3[3] -= 250;this.p3[5] -= 125;
-					this.p2[0] += 125;this.p2[1] += 125;     
+					this.p2[0] += 125;this.p2[1] += 125; 
+					this.p4[0] -= 125;this.p4[1] += 250;this.p4[2] += 125;this.p4[3] += 250;this.p4[5] += 125;     
 				}
 				break;
 		}

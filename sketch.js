@@ -181,7 +181,7 @@ function draw() {
 	piece5.afficher();*/
 	//piece6.afficher();
 	//piece7.afficher();
-	piece1.afficher();
+	piece3.afficher();
 	/*piece9.afficher();
 	piece10.afficher();*/
 }
