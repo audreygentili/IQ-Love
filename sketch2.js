@@ -1981,8 +1981,6 @@ textSize(32);
 
   fill('rgba(253,50,158,0.8)');
   
-  
-  
   triangle(i3,j3,t3,u3, v3,w3);
   triangle(i3,j3, t3,u3,x3, y3);
   triangle(v3, w3,t3,u3, z3,a3);
@@ -2005,19 +2003,6 @@ textSize(32);
   rect(x2,y2,125, 125);
   triangle(t2,u2,z2, a2, v2,w2);
 
-  i2 = 205
-j2 = 455
-g2 = 330
-h2 = 455
-z2 = 455
-a2 = 330
-t2 = 455
-u2 = 455
-v2 = 580 
-w2 = 330
-x2 = 330
-y2 = 330
-
   //piece rouge
 
   fill('rgba(255,0,0,0.8)');
@@ -2038,9 +2023,6 @@ y2 = 330
 
   fill('rgba(51, 196, 92,0.8)');
   
-
-  
-  
   rect(i5,j5,125,125);
   rect(g5,h5,125,125);
   triangle(t5,u5,v5,w5,x5,y5);
@@ -2052,47 +2034,33 @@ y2 = 330
   
   fill('rgba(2, 122, 36,0.8)');
   
-
-  
   rect(i4,j4,125,125);
   rect(g4,h4,125,125);
   triangle(t4,u4,v4,w4,x4,y4);
 
   //piece violette
-
   
   fill('rgba(88,0,138,0.8)');
-  triangle(g6,h6,t6,u6,v6,w6);
-  triangle(g6,h6,t6,u6,x6,y6);
+  
   rect(i6,j6,125,125);
   triangle(v6,w6,t6,u6,z6,a6);
   triangle(z6,a6,b6,c6,d6,e6);
+  triangle(g6,h6,t6,u6,v6,w6);
+  triangle(g6,h6,t6,u6,x6,y6);
   
   //piece orange
   
   fill('rgba(214,122,21,0.8)');
   
-
   triangle(t7,u7,v7,w7,x7,y7);
   rect(g7,h7,125,125);
   rect(i7,j7,125,125);
   triangle(x7,y7,z7,a7,b7,c7);
   triangle(b7,c7,d7,e7,k7,l7);
-  /*
-beginShape();
-vertex(30, 20);
-vertex(85, 20);
-vertex(85, 75);
-vertex(85, 130);
-vertex(30,185);
-endShape(CLOSE);*/
-  
-  
+
   //pièce bleu foncé
   
   fill('rgba(3,13,182,0.8)');
-  
-
   
   triangle(t8,u8,v8,w8,x8,y8);
   rect(i8,j8,125,125);
@@ -2101,7 +2069,6 @@ endShape(CLOSE);*/
   
   //piece jaune
   
-
   fill('rgba(235,238,24,0.8)');
   triangle(t9,u9,v9,w9,x9,y9);
   rect(i9,j9,125,125);
