@@ -1,11 +1,13 @@
+//fonctions de déplacement inspirées de :
+//https://editor.p5js.org/enickles/sketches/H1n19TObz
+
+
 var mirror_checked = false;
 var selected = null;
 var pieces = [];
-var basex, basey;
 
 function setup() {
 	createCanvas(910, 1500);
-	background(50);
 	//vert clair
 	piece1 = new Piece4(1, 4, "e", color(134,207,11), [205,80,125,125], [80,80,125,125], [330,80,455,205,330,205], [80,205,125,125]);
 	//new Piece4(1, 4, "o", color(134,207,11),[80,205,205,330,205,205], [330,205,125,125], [205,205,125,125], [330,80,125,125]);
@@ -19,8 +21,7 @@ function setup() {
 	piece4 = new Piece5(4, 5, "o", color(214,122,21), [455,580,125,125], [330,455,125,125], [330,580,455,705,455,580], [455,580,455,455,580,580], [580,580,580,705,705,705]);
 	//new Piece5(4, 5, "o", color(214,122,21), [205,330,330,455,330,330], [205,205,125,125], [330,330,125,125], [330,330,330,205,455,330], [455,330,455,455,580,455]);
 	//violet 
-	//piece5 = new Piece5(5, 5, "o", color(88,0,138), [455,80,125,125], [580,330,580,205, 455,205], [705,205,580,205,580,330], [705,205,580,205,580,80], [455,205,455,80,330,80]);
-	piece5 = new Piece5(5, 5, "o", color(88,0,138), [455,280,125,125], [580,530,580,405, 455,405], [705,405,580,405,580,530], [705,405,580,405,580,280], [455,405,455,280,330,280]);
+	piece5 = new Piece5(5, 5, "o", color(88,0,138), [455,80,125,125], [580,330,580,205, 455,205], [705,205,580,205,580,330], [705,205,580,205,580,80], [455,205,455,80,330,80]);
 	//new Piece5(5, 5, "o", color(88,0,138), [205,330,330,205,330,330], [205,330,330,455,330,330], [330,330,125,125], [330,330,330,205,455,330], [455,330,455,455,580,455]);
 	//rouge
 	piece6 = new Piece3(6, 3, "n", color(255,0,0),[80,455,125,125], [205,455,125,125], [80,330,80,455,205,455]);
@@ -74,23 +75,18 @@ function selectedPiece() {
 
 function mousePressed() {
 	selectedPiece();
-	basex = mouseX;
-	basey = mouseY;
-}
-
-function movePiece(x, y) {
 	for (let i = 0; i < pieces.length; i++) {
 		if (pieces[i].nom == selected) {
-			pieces[i].deplacement(x, y);
+			pieces[i].pressed(mouseX, mouseY);
 		}
 	}
 }
 
-function mouseDragged() {
-	if (mirror_checked == false && mouseX > 50 && mouseX < 750 && mouseY > 50 && mouseY < 625) {
-		basex = mouseX-basex;
-		basey = mouseY-basey;
-		movePiece(basex, basey);
+function mouseReleased() {
+	for (let i = 0; i < pieces.length; i++) {
+		if (pieces[i].nom == selected) {
+			pieces[i].notPressed();
+		}
 	}
 }
 
@@ -136,6 +132,7 @@ function keyPressed() {
 }
 
 function draw() { 
+	background(50);
 	fill(0);
 	strokeWeight(1);
 	rect(80,80,750,625);
@@ -175,16 +172,31 @@ function draw() {
 		rotate_right.show();
 	  }
 
-	/*piece1.afficher();
-	piece2.afficher();
-	piece3.afficher();
-	piece4.afficher();
-	piece5.afficher();*/
-	//piece6.afficher();
-	//piece7.afficher();
-	piece10.afficher();
-	/*piece9.afficher();
-	piece10.afficher();*/
+	var a = [];
+	for (let i = 0; i < pieces.length; i++) {
+		if (pieces[i].nom != selected) {
+			append(a, pieces[i]);
+		}
+	}
+
+	for (let i = 0; i < pieces.length; i++) {
+		if (pieces[i].nom == selected) {
+			append(a, pieces[i]);
+		}
+	}
+
+	a.forEach(element => element.afficher(mouseX, mouseY));
+
+	/*piece1.afficher(mouseX, mouseY);
+	piece2.afficher(mouseX, mouseY);
+	piece3.afficher(mouseX, mouseY);
+	piece4.afficher(mouseX, mouseY);
+	piece5.afficher(mouseX, mouseY);
+	piece6.afficher(mouseX, mouseY);
+	piece7.afficher(mouseX, mouseY);
+	piece8.afficher(mouseX, mouseY);
+	piece9.afficher(mouseX, mouseY);
+	piece10.afficher(mouseX, mouseY);*/
 /*
   fill('rgba(214,122,21,0.8)');
   rect(i7,j7,125,125);
