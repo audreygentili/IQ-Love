@@ -192,20 +192,62 @@ class Piece3 extends Piece {
 					this.p3[1] -= 125;this.p3[2] -= 125;this.p3[3] -= 250;this.p3[4] -= 125;
 				}
 				break; 
-
 	  	}
 	}
 	
-	/*rotationM() {
-	  sX = mouseX
-	  sY = mouseY
-	  
-	  
-	  if (selected == null )selected = pieceSelected
-	  
-	  
-	  switch(selected){
-		case 0:
+	rotationM() {
+	  	switch (this.nom) {
+			case 6:
+				if (this.orientation == "o") {
+					this.orientation = "n";
+					this.p2[0] += 125;this.p2[1] += 125;
+					this.p3[0] += 125;this.p3[1] -= 250;this.p3[3] -= 125;this.p3[4] += 125;
+				} else if (this.orientation == "n") {
+					this.orientation = "e";
+					this.p2[0] -= 125;this.p2[1] += 125;
+					this.p3[0] += 250;this.p3[1] += 125;this.p3[2] += 125;this.p3[5] += 125;
+				} else if (this.orientation == "e") {
+					this.orientation = "s";
+					this.p2[0] -= 125;this.p2[1] -= 125;
+					this.p3[0] -= 125;this.p3[1] += 250;this.p3[3] += 125;this.p3[4] -= 125;
+				} else if (this.orientation == "s") {
+					this.orientation = "o";
+					this.p2[0] += 125;this.p2[1] -= 125;
+					this.p3[0] -= 250;this.p3[1] -= 125;this.p3[2] -= 125;this.p3[5] -= 125;
+				}
+				break;
+			case 7:
+				if (this.orientation == "o") {
+					this.orientation = "n";
+					this.p2[0] += 125;this.p2[3] += 125;this.p2[4] += 125;this.p2[5] += 250;
+					this.p3[0] -= 125;this.p3[3] -= 125;this.p3[4] -= 125;this.p3[5] -= 250;
+				} else if (this.orientation == "n") {
+					this.orientation = "o";
+					this.p2[0] -= 125;this.p2[3] -= 125;this.p2[4] -= 125;this.p2[5] -= 250;
+					this.p3[0] += 125;this.p3[3] += 125;this.p3[4] += 125;this.p3[5] += 250;
+				}
+				break;
+			case 8:
+				if (this.orientation == "o") {
+					this.orientation = "n";
+					this.p2[0] -= 125;this.p2[1] += 125;
+					this.p3[0] += 125;this.p3[2] += 250;this.p3[3] -= 125;this.p3[5] -= 125;
+				} else if (this.orientation == "n") {
+					this.orientation = "e";
+					this.p2[0] -= 125;this.p2[1] -= 125;
+					this.p3[1] += 125;this.p3[2] += 125;this.p3[3] += 250;this.p3[4] += 125;
+				} else if (this.orientation == "e") {
+					this.orientation = "s";
+					this.p2[0] += 125;this.p2[1] -= 125;
+					this.p3[0] -= 125;this.p3[2] -= 250;this.p3[3] += 125;this.p3[5] += 125;
+				} else if (this.orientation == "s") {
+					this.orientation = "o";
+					this.p2[0] += 125;this.p2[1] += 125;
+					this.p3[1] -= 125;this.p3[2] -= 125;this.p3[3] -= 250;this.p3[4] -= 125;
+				}
+				break;
+		
+			case 0:
 		  if(mirror[selected] == 4 || mirror[selected] == 6){
 			u1 += 125; w1 += 125;y1 += 375;
 		  }
@@ -342,7 +384,7 @@ class Piece3 extends Piece {
 			t8+=125;v8+=125;x8-=125;z8+=125;b8+=125;d8+=375;
 		  }
 	
-		  break
+		  break;
 	
 	  }
 		  if(mirror[selected] == 4) {
@@ -351,19 +393,16 @@ class Piece3 extends Piece {
 		  if(mirror[selected] == 1) {
 			mirror[selected] = 3 
 		  }else if(mirror[selected] == 3) mirror[selected] = 1;
-	
-	  if (mirror_checked){
-		mirror_checked = false;
-	  }else mirror_checked = true;
 	}
 
-	 clipPiece(pS) {
+	clip() {
+	/*
 	  sX = mouseX
 	  sY = mouseY
 	  
 	  if (sX > 830 || sX < 80 || sY < 80 || sY > 705 ) return true
 	  else {
-	  switch (pS){
+	  switch (this.nom) {
 		case 0:
 		  i1 = sX
 		  j1 = sY
@@ -1131,8 +1170,8 @@ class Piece3 extends Piece {
 		  break
 	  }
 	  }
-	}
 	*/
+	}
 }
 
 class Piece4 extends Piece {
