@@ -10,7 +10,7 @@ class Piece {
 	
 class Piece3 extends Piece {
 	constructor(nom, nbpieces, orientation,miroir, col, p1, p2, p3) {
-		super(nom, nbpieces, orientation, miroir,col);
+		super(nom, nbpieces, orientation, miroir, col);
 		this.p1 = p1;
 		this.p2 = p2;
 		this.p3 = p3;
@@ -1019,7 +1019,7 @@ class Piece3 extends Piece {
 }
 class Piece4 extends Piece {
 	constructor(nom, nbpieces, orientation,miroir, col, p1, p2, p3, p4) {
-		super(nom, nbpieces, orientation, miroir,col);
+		super(nom, nbpieces, orientation, miroir, col);
 		this.p1 = p1;
 		this.p2 = p2;
 		this.p3 = p3;
@@ -1290,7 +1290,7 @@ class Piece4 extends Piece {
 
 class Piece5 extends Piece {
 	constructor(nom, nbpieces, orientation,miroir, col, p1, p2, p3, p4, p5) {
-		super(nom, nbpieces, orientation, miroir,col);
+		super(nom, nbpieces, orientation, miroir, col);
 		this.p1 = p1;
 		this.p2 = p2;
 		this.p3 = p3;
@@ -1687,7 +1687,6 @@ class Piece5 extends Piece {
 				this.p5[0] += 375;this.p5[2] += 125;this.p5[4] +=125;
 			}
 			break;
-	  
 		  }
   }
 }
@@ -1705,13 +1704,6 @@ class Pattern {
 		this.p8 = p8;
 		this.p9 = p9;
 		this.p10 = p10;
-	}
-
-	afficher(px, py) {
-		var p = [this.p1, this.p2, this.p3, this.p4, this.p5, this.p6, this.p7, this.p8, this.p9, this.p10];
-		for (let i = 0; i < p.length; i++) {
-			p[i].afficher(px, py);
-		}
 	}
 }
 
