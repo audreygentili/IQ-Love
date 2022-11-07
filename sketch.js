@@ -6,6 +6,7 @@ var mirror_checked = false;
 var selected = null;
 var pieces = [];
 var jeu = false;
+var a = [];
 
 function setup() {
 	jeu = false;
@@ -13,7 +14,6 @@ function setup() {
 	background(50);
 	textSize(32);
 	fill(0, 102, 153);
-	text('IQ LOVE',width/2,height/2);
 	start = createButton("Commencez");
 	start.position(width/2,height/2);
 	start.size(200,100);
@@ -46,20 +46,7 @@ function draw() {
 			rotate_left.show();
 			rotate_right.show();
 		}
-	
-		var a = [];
-		for (let i = 0; i < pieces.length; i++) {
-			if (pieces[i].nom != selected) {
-				append(a, pieces[i]);
-			}
-		}
-	
-		for (let i = 0; i < pieces.length; i++) {
-			if (pieces[i].nom == selected) {
-				append(a, pieces[i]);
-			}
-		}
-	
+		
 		a.forEach(element => element.afficher(mouseX, mouseY));
 	}
 }
@@ -116,6 +103,7 @@ function jouer() {
 	//cyan
 	piece10 = new Piece5(10, 5, "o", color(76,207,184), [580,330,125,125], [580,455,125,125], [580,580,580,455,455,455], [580,330,580,455,455,455], [705,205,705,330,580,330]);
 	//new Piece5(10, 5, "o", color(76,207,184), [580,80,125,125], [705,80,125,125], [455,80,580,80,580,205], [580,205,705,205,705,330], [830,205,705,205,705,330]);
+	pieces = [];
 	append(pieces, piece1);
 	append(pieces, piece2);
 	append(pieces, piece3);
@@ -126,7 +114,13 @@ function jouer() {
 	append(pieces, piece8);
 	append(pieces, piece9);
 	append(pieces, piece10);
-	print(pieces);}
+	print(pieces);
+
+	a = [];
+	for (let i = 0; i < pieces.length; i++) {
+			append(a, pieces[i]);
+	}
+}
   
 function state() {
 	if (jeu) {
@@ -149,6 +143,15 @@ function selectedPiece() {
 		if (sX >= pieces[i].p1[0] && sX <= pieces[i].p1[0] + 125 && sY >= pieces[i].p1[1] && sY <= pieces[i].p1[1] + 125) {
 			selected = i+1;
 			print("selectionnee : "+selected);
+		}
+	}
+
+	for (let i = 0; i < pieces.length; i++) {
+		if (pieces[i].nom == selected) {
+			var fromIndex = a.indexOf(pieces[i]);
+			var len = a.length;
+			var elt = a.splice(fromIndex, 1)[0];
+			a.splice(len, 0, elt);
 		}
 	}
 }
