@@ -253,7 +253,6 @@ class Piece3 extends Piece {
   	clip() {
 	  sX = mouseX
 	  sY = mouseY
-	  //ddd
 	  if (sX > 830 || sX < 80 || sY < 80 || sY > 705 ) return true
 	  else {
 	  switch (this.nom) {
@@ -633,8 +632,11 @@ class Piece3 extends Piece {
 			
 		  }
 		  break
+		}
+		}
 	}
 }
+
 class Piece4 extends Piece {
 	constructor(nom, nbpieces, orientation,miroir, col, p1, p2, p3, p4) {
 		super(nom, nbpieces, orientation, miroir, col);
@@ -856,6 +858,7 @@ class Piece4 extends Piece {
 				break;
 		}
 	}
+
 	rotationM() {
 		switch (this.nom) {
 		  case 1:
@@ -905,6 +908,10 @@ class Piece4 extends Piece {
   	}
 
 	clip() {
+		sX = mouseX
+		sY = mouseY
+		if (sX > 830 || sX < 80 || sY < 80 || sY > 705 ) return true
+		else {
 		switch (this.nom) {
 			case 1:
 			if (this.orientation == "o") {
@@ -1188,6 +1195,7 @@ class Piece4 extends Piece {
 				}
 			}
 			break;
+		}
 		}
 	}
 }
@@ -1595,6 +1603,10 @@ class Piece5 extends Piece {
 	}
 
 	clip() {
+		sX = mouseX
+		sY = mouseY
+		if (sX > 830 || sX < 80 || sY < 80 || sY > 705 ) return true
+		else {
 		switch (this.nom) {
 			case 10:
 		  if (this.orientation == "e") {
@@ -1986,8 +1998,8 @@ class Piece5 extends Piece {
 		  }
 		  break;
 		}
+		}
 	}
-
 }
 
 class Pattern {
@@ -2005,4 +2017,3 @@ class Pattern {
 		this.p10 = p10;
 	}
 }
-
