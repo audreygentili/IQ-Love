@@ -2002,7 +2002,7 @@ class Piece5 extends Piece {
 	}
 }
 
-class Pattern {
+class Solution {
 	constructor(num, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) {
 		this.num = num;
 		this.p1 = p1;
