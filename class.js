@@ -2017,3 +2017,19 @@ class Solution {
 		this.p10 = p10;
 	}
 }
+
+class Pattern {
+	constructor(num, p1, p2, p3, p4, p5, p6, p7, p8, p9, p10) {
+		this.num = num;
+		this.p1 = p1;
+		this.p2 = p2;
+		this.p3 = p3;
+		this.p4 = p4;
+		this.p5 = p5;
+		this.p6 = p6;
+		this.p7 = p7;
+		this.p8 = p8;
+		this.p9 = p9;
+		this.p10 = p10;
+	}
+}

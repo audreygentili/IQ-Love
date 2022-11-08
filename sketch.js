@@ -5,8 +5,12 @@
 var mirror_checked = false;
 var selected = null;
 var pieces = [];
+var patterns = [];
+var solutions = [];
+var solutionJeu = [];
 var jeu = false;
 var a = [];
+var num;
 
 function setup() {
 	jeu = false;
@@ -30,7 +34,7 @@ function draw() {
 		fill(255);
 		stroke(0); 
 		//canva
-		for(i = 1; i <= 6;i++) {
+		for(i = 1; i <= 6; i++) {
 			for(j=1; j <= 5; j++) {
 				rect(i*125-45, j*125-45, 125,125);
 			}
@@ -48,6 +52,8 @@ function draw() {
 		}
 		
 		a.forEach(element => element.afficher(mouseX, mouseY));
+
+		detecterFin();
 	}
 }
 
@@ -136,6 +142,16 @@ function state() {
 		jeu = true;
 	}	
 }
+
+function detecterFin(num) {
+	if (num == patterns[i].num) {
+		for(j=1; j <= 5; j++) {
+			rect(i*125-45, j*125-45, 125,125);
+		}
+	}
+}
+
+
 function selectedPiece() {
 	sX = mouseX;
 	sY = mouseY;
