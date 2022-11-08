@@ -253,7 +253,7 @@ class Piece3 extends Piece {
   	clip() {
 	  sX = mouseX
 	  sY = mouseY
-	  
+	  //ddd
 	  if (sX > 830 || sX < 80 || sY < 80 || sY > 705 ) return true
 	  else {
 	  switch (this.nom) {
@@ -856,7 +856,6 @@ class Piece4 extends Piece {
 				break;
 		}
 	}
-
 	rotationM() {
 		switch (this.nom) {
 		  case 1:
@@ -1501,7 +1500,6 @@ class Piece5 extends Piece {
 				break;	
 		}
 	}
-
 	rotationM() {
 		switch (this.nom) {
 		  case 4:
