@@ -1,8 +1,8 @@
-var pattern = [];
-
 var pattern81 = new Pattern(81,[8,205,80,"e",true],[5,455,80,"e",true],
 [2,205,205,"e",false],[10,705,330,"o",false],
 [9,580,580,"e",false],[3,330,580,"e",false]);
+
+patternD.push(pattern81);
 
 /*
 var pattern73 = new Pattern(73, new Piece4(1, 4, "e", color(134,207,11), [580,455,125,125], [455,455,125,125], [705,580,830,455,705,455], [455,330,125,125]), 
