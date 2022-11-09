@@ -40,7 +40,7 @@ function setup() {
 
 	selected = null;
 	jeu = false;
-	createCanvas(910, 1500);
+	createCanvas(1500, 1500);
 	background(50);
 	di = createDiv('Choisissez la difficulté<br/>Débutant    Confirmé     Expert');
 	di.style('font-size', '32px');
@@ -128,87 +128,97 @@ function jouer() {
 	}
 
 	pieces = [];
-	b = [];
+	piecesb = [];
 
 	if (patternJeu.p1 == 0) {
 		//vert clair
-		piece1 = new Piece4(1, 4, "e", false, color(134,207,11), [205,80,125,125], [80,80,125,125], [330,80,455,205,330,205], [80,205,125,125]);
+		piece1 = makePiece4(900,80,"n",false,1);
+		//piece1 = new Piece4(1, 4, "e", false, color(134,207,11), [205,80,125,125], [80,80,125,125], [330,80,455,205,330,205], [80,205,125,125]);
 		append(pieces, piece1);
 	} else {
 		piece1 = patternJeu.p1;
-		append(b, piece1);
+		append(piecesb, piece1);
 	}
 	if (patternJeu.p2 == 0) {
 		//bleu foncé
-		piece2 = new Piece4(2, 4, "s", false, color(3,13,182), [705,205,125,125], [705,80,125,125], [830,330,705,455,705,330], [705,205,705,80,580,80]);
+		piece2 = makePiece4(900,120,"n",false,2);
+		//piece2 = new Piece4(2, 4, "s", false, color(3,13,182), [705,205,125,125], [705,80,125,125], [830,330,705,455,705,330], [705,205,705,80,580,80]);
 		append(pieces, piece2);
 	} else {
 		piece2 = patternJeu.p2;
-		append(b, piece2);
+		append(piecesb, piece2);
 	}
 	if (patternJeu.p3 == 0) {
 		//jaune
-		piece3 = new Piece4(3, 4, "n", false, color(235,238,24), [705,455,125,125], [705,580,125,125], [705,455,830,330,830,455], [580,580,705,705,705,580]);
+		piece3 = makePiece4(900,160,"n",false,3);
+		//piece3 = new Piece4(3, 4, "n", false, color(235,238,24), [705,455,125,125], [705,580,125,125], [705,455,830,330,830,455], [580,580,705,705,705,580]);
 		append(pieces, piece3);
 	} else {
 		piece3 = patternJeu.p3;
-		append(b, piece3);
+		append(piecesb, piece3);
 	}
 	if (patternJeu.p4 == 0) {
 		//orange 
-		piece4 = new Piece5(4, 5, "o", false, color(214,122,21), [455,580,125,125], [330,455,125,125], [330,580,455,705,455,580], [455,580,455,455,580,580], [580,580,580,705,705,705]);
+		piece4 = makePiece5(900,200,"n",false,4);
+		//piece4 = new Piece5(4, 5, "o", false, color(214,122,21), [455,580,125,125], [330,455,125,125], [330,580,455,705,455,580], [455,580,455,455,580,580], [580,580,580,705,705,705]);
 		append(pieces, piece4);
 	} else {
 		piece4 = patternJeu.p4;
-		append(b, piece4);
+		append(piecesb, piece4);
 	}
 	if (patternJeu.p5 == 0) {
 		//violet 
-		piece5 = new Piece5(5, 5, "o", false, color(88,0,138), [455,80,125,125], [580,330,580,205, 455,205], [705,205,580,205,580,330], [705,205,580,205,580,80], [455,205,455,80,330,80]);
+		piece5 = makePiece5(900,240,"n",false,5);
+		//piece5 = new Piece5(5, 5, "o", false, color(88,0,138), [455,80,125,125], [580,330,580,205, 455,205], [705,205,580,205,580,330], [705,205,580,205,580,80], [455,205,455,80,330,80]);
 		append(pieces, piece5);
 	} else {
 		piece5 = patternJeu.p5;
-		append(b, piece5);
+		append(piecesb, piece5);
 	}
 	if (patternJeu.p6 == 0) {
 		//rouge
-		piece6 = new Piece3(6, 3, "n", false, color(255,0,0),[80,455,125,125], [205,455,125,125], [80,330,80,455,205,455]);
+		piece6 = makePiece3(900,280,"n",false,6);
+		//piece6 = new Piece3(6, 3, "n", false, color(255,0,0),[80,455,125,125], [205,455,125,125], [80,330,80,455,205,455]);
 		append(pieces, piece6);
 	} else {
 		piece6 = patternJeu.p6;
-		append(b, piece6);
+		append(piecesb, piece6);
 	}
 	if (patternJeu.p7 == 0) {
 		//bleu clair
-		piece7 = new Piece3(7, 3, "o", false, color(83,225,230), [205,330,125,125],  [330,330,330,455,455,455], [205,455,205,330,80,330]);
+		piece7 = makePiece3(900,320,"n",false,7);
+		//piece7 = new Piece3(7, 3, "o", false, color(83,225,230), [205,330,125,125],  [330,330,330,455,455,455], [205,455,205,330,80,330]);
 		append(pieces, piece7);
 	} else {
 		piece7 = patternJeu.p7;
-		append(b, piece7);
+		append(piecesb, piece7);
 	}
 	if (patternJeu.p8 == 0) {
 		//vert foncé
-		piece8 = new Piece3(8, 3, "e", false, color(2,122,36), [205,580,125,125], [80,580,125,125], [330,705,455,705,330,580]);
+		piece8 = makePiece3(900,360,"n",false,8);
+		//piece8 = new Piece3(8, 3, "e", false, color(2,122,36), [205,580,125,125], [80,580,125,125], [330,705,455,705,330,580]);
 		append(pieces, piece8);
 	} else {
 		piece8 = patternJeu.p8;
-		append(b, piece8);
+		append(piecesb, piece8);
 	}
 	if (patternJeu.p9 == 0) {
 		//rose
-		piece9 = new Piece5(9, 5, "o", false, color(253,50,158), [330,205,125,125], [205,205,125,125], [455,455,455,330,330,330], [580,330,455,330,455,455], [580,330,455,330,455,205]);
+		piece9 = makePiece5(900,400,"n",false,9);
+		//piece9 = new Piece5(9, 5, "o", false, color(253,50,158), [330,205,125,125], [205,205,125,125], [455,455,455,330,330,330], [580,330,455,330,455,455], [580,330,455,330,455,205]);
 		append(pieces, piece9);
 	} else {
 		piece9 = patternJeu.p9;
-		append(b, piece9);
+		append(piecesb, piece9);
 	}
 	if (patternJeu.p10 == 0) {
 		//cyan
-		piece10 = new Piece5(10, 5, "o", false, color(76,207,184), [580,330,125,125], [580,455,125,125], [580,580,580,455,455,455], [580,330,580,455,455,455], [705,205,705,330,580,330]);
+		piece10 = makePiece5(900,440,"n",false,10);
+		//piece10 = new Piece5(10, 5, "o", false, color(76,207,184), [580,330,125,125], [580,455,125,125], [580,580,580,455,455,455], [580,330,580,455,455,455], [705,205,705,330,580,330]);
 		append(pieces, piece10);
 	} else {
 		piece10 = patternJeu.p10;
-		append(b, piece10);
+		append(piecesb, piece10);
 	}
 	print(pieces);
 
@@ -216,6 +226,12 @@ function jouer() {
 	for (let i = 0; i < pieces.length; i++) {
 		append(a, pieces[i]);
 	}
+	b = [];
+	for (let i = 0; i < piecesb.length; i++) {
+		console.log(piecesb[i]);
+		append(b, piecesb[i]);
+	}
+	
 }
   
 function state() {

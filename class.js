@@ -1436,8 +1436,10 @@ class Piece5 extends Piece {
 	}
 	
 	afficher(px, py) {
+
 		var p = [this.p1, this.p2, this.p3, this.p4, this.p5];
 		if (this.dragging) {
+			
 			for (let i = 0; i < p.length; i++) {
 				if (p[i].length == 4) {
 					p[i][0] = this.offset[i][0] + px;
@@ -1464,6 +1466,7 @@ class Piece5 extends Piece {
 				triangle(p[i][0], p[i][1], p[i][2], p[i][3], p[i][4], p[i][5]);
 			}
 		}
+		
 	}
 
 	pressed(px, py) {
@@ -1861,7 +1864,6 @@ class Piece5 extends Piece {
 								this.p5[3] = this.p1[1] + 125
 								this.p5[4] = this.p1[0] + 250
 								this.p5[5] = this.p1[1] + 125
-
 						} else if (this.orientation == "s") {
 								this.p3[0] = this.p1[0] + 125 
 								this.p3[1] = this.p1[1] - 125
