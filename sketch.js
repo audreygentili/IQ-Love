@@ -13,6 +13,7 @@ var solutionC = [];
 var solutionE = [];
 var solutionJeu;
 var jeu = false;
+var gagner = false;
 var a = [];
 var b = [];
 var num;
@@ -21,6 +22,7 @@ var di;
 var mode;
 var showtext = false;
 var score = 0;
+var tabScore = [5, 10, 20];
 var p1 = [];
 var p2 = [];
 var p3 = [];
@@ -35,8 +37,12 @@ function setup() {
 	,0,makePiece5(455,80,"e",true,5),0,0,makePiece3(205,80,"e",true,8),makePiece5(580,580,"e",false,9)
 	,makePiece5(705,330,"o",false,10));
 
-	patternD.push(pattern81);
+	var pattern92 = new Pattern(92,0,makePiece4(205,580,"e",true,2),0,makePiece5(455,330,"s",false,4)
+	,makePiece5(455,80,"e",true,5),0,0,makePiece3(455,580,"o",true,8),0,0);
+	
+	var pattern95 = new Pattern(95,0,0,0,0,makePiece5(330,455,"n",true,5),0,makePiece3(330,80,"o",true,7),makePiece3(205,580,"e",false,8),makePiece5(580,80,"e",true,9),0);
 
+	patternD.push(pattern81);
 
 	selected = null;
 	jeu = false;
@@ -56,6 +62,13 @@ function setup() {
 	start.position(width/2,height/2);
 	start.size(200,100);
 	start.mousePressed(state);
+
+	replay = createButton("Rejouer");
+	replay.position(width/2,500);
+	replay.size(200,100);
+	replay.mousePressed(state);
+
+	replay.hide();
 }
 
 function draw() { 
@@ -75,7 +88,9 @@ function draw() {
 		}
 	
 		textSize(32);
-		text("Grab pieces on their center",270, 40);
+		text("Attrapez les pièces par leur centre",270, 40);
+		textSize(25);
+		text("Votre score est de : "+score,320, 70);
 	
 		if (mirror_checked) {
 			rotate_left.hide();
@@ -85,11 +100,20 @@ function draw() {
 			rotate_right.show();
 		}
 		
+		b.forEach(element => element.afficher(0, 0));
 		a.forEach(element => element.afficher(mouseX, mouseY));
 
-		b.forEach(element => element.afficher(0, 0));
-
 		detecterFin();
+	}
+	if (gagner) {
+		di = createDiv('Bravo vous avez gagné !<br/>Votre score est de : '+score);
+		di.style('font-size', '32px');
+		di.style('color', '#ffffff');
+		di.style('text-align', 'center');
+		di.position(270, 350);
+		replay.show();
+		gagner = false;
+		mirror_checked = false;
 	}
 }
 
@@ -116,15 +140,16 @@ function jouer() {
 
 	mode = slider.value();
 	print(mode);
+	rand = Math.floor(Math.random() * 4);
 	if (mode == 1) {
-		patternJeu = patternD[0];
-		solutionJeu = solutionD[0];
+		patternJeu = patternD[rand];
+		solutionJeu = solutionD[rand];
 	} else if (mode == 2) {
-		patternJeu = patternC[0];
-		solutionJeu = solutionC[0];
+		patternJeu = patternC[rand];
+		solutionJeu = solutionC[rand];
 	} else {
-		patternJeu = patternE[0];
-		solutionJeu = solutionE[0];
+		patternJeu = patternE[rand];
+		solutionJeu = solutionE[rand];
 	}
 
 	pieces = [];
@@ -242,10 +267,16 @@ function state() {
 		home.hide();
 		jeu = false;
 		setup();
+	} else if (gagner) {
+		rotate_left.hide();
+		rotate_right.hide();
+		mirror.hide();
+		home.hide();
 	} else {
 		start.hide();
 		di.hide();
 		slider.hide();
+		replay.hide();
 		jouer();
 		jeu = true;
 	}	
@@ -275,6 +306,15 @@ function detecterFin() {
 		solutionJeu.p7[3] == piece7.miroir && solutionJeu.p8[3] == piece8.miroir &&
 		solutionJeu.p9[3] == piece9.miroir && solutionJeu.p10[3] == piece10.miroir)
 	{
+		if (patternD.includes(patternJeu)) {
+			score += tabScore[0];
+		} else if (patternC.includes(patternJeu)) {
+			score += tabScore[1];
+		} else if (patternE.includes(patternJeu)) {
+			score += tabScore[2];
+		}
+		jeu = false;
+		gagner = true;
 		state();	
 	}
 }
