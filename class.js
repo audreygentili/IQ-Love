@@ -260,9 +260,6 @@ class Piece3 extends Piece {
 	    else {
 	    switch (this.nom) {
 		case 6:
-		    this.p1[0] = sX
-		    this.p1[1] = sY
-		    
 		    if (this.orientation == "s") {
 			for (i = 0; i <= 6; i++) {
 			    for (j = 0; j <= 5; j++) {
@@ -335,8 +332,6 @@ class Piece3 extends Piece {
 		    break;
 		    
 		case 7:
-		    this.p1[0] = sX
-		    this.p1[1] = sY
 		    if (this.orientation == "e") {
 			    for (i = 0; i <= 6; i++) {
 			        for (j = 0; j <= 5; j++) {
@@ -490,129 +485,6 @@ class Piece3 extends Piece {
 				    this.p3[1] = this.p1[1] 
 				    this.p3[2] = this.p1[0] + 125
 				    this.p3[3] = this.p1[1] - 125
-				}
-			    }
-			}
-		    }
-		    break;
-		     
-		case 4:
-		    if (this.orientation == "e") {
-			for (i = 0; i <= 6; i++) {
-			        for (j = 0; j <= 5; j++) {
-				        if (sX >= 80 + 125 * i    && sX <= 205 + 125 * i && sY >= 80 + 125 * j && sY <= 205 + 125 * j) {
-				    this.p1[0] = 80 + 125 * i
-				    this.p1[1] = 80 + 125 * j
-				    this.p2[0] = this.p1[0] - 125
-				    this.p2[1] = this.p1[1] - 125
-				    this.p3[0] = this.p1[0] - 125
-				    this.p3[1] = this.p1[1] 
-				    this.p3[2] = this.p1[0]
-				    this.p3[3] = this.p1[1] + 125 
-				    this.p3[4] = this.p1[0] 
-				    this.p3[5] = this.p1[1] 
-				    this.p4[0] = this.p1[0] 
-				    this.p4[1] = this.p1[1] 
-				    this.p4[2] = this.p1[0]
-				    this.p4[3] = this.p1[1] - 125
-				    this.p4[4] = this.p1[0] + 125
-				    this.p4[5] = this.p1[1] 
-				    this.p5[0] = this.p1[0] + 125
-				    this.p5[1] = this.p1[1] 
-				    this.p5[2] = this.p1[0] + 125
-				    this.p5[3] = this.p1[1] + 125
-				    this.p5[4] = this.p1[0] + 250
-				    this.p5[5] = this.p1[1] + 125
-	
-				}
-			    }
-			}
-		    } else if (this.orientation == "s") {
-			    for (i = 0; i <= 6; i++) {
-			        for (j = 0; j <= 5; j++) {
-				        if (sX >= 80 + 125 * i    && sX <= 205 + 125 * i && sY >= 80 + 125 * j && sY <= 205 + 125 * j) {
-				    this.p1[0] = 80 + 125 * i
-				    this.p1[1] = 80 + 125 * j
-				    this.p2[0] = this.p1[0] + 125 
-				    this.p2[1] = this.p1[1] - 125
-				    this.p3[0] = this.p1[0] + 125 
-				    this.p3[1] = this.p1[1] - 125
-				    this.p3[2] = this.p1[0] 
-				    this.p3[3] = this.p1[1] 
-				    this.p3[4] = this.p1[0] + 125
-				    this.p3[5] = this.p1[1]
-				    this.p4[0] = this.p1[0] + 125
-				    this.p4[1] = this.p1[1] 
-				    this.p4[2] = this.p1[0] + 250
-				    this.p4[3] = this.p1[1] 
-				    this.p4[4] = this.p1[0] + 125
-				    this.p4[5] = this.p1[1] + 125
-				    this.p5[0] = this.p1[0] + 125
-				    this.p5[1] = this.p1[1] + 125
-				    this.p5[2] = this.p1[0] 
-				    this.p5[3] = this.p1[1] + 250
-				    this.p5[4] = this.p1[0] 
-				    this.p5[5] = this.p1[1] + 125
-				    
-				}
-			    }
-			}
-		    } else if (this.orientation == "o") {
-			    for (i = 0; i <= 6; i++) {
-			        for (j = 0; j <= 5; j++) {
-				        if (sX >= 80 + 125 * i    && sX <= 205 + 125 * i && sY >= 80 + 125 * j && sY <= 205 + 125 * j) {
-				    this.p1[0] = 80 + 125 * i
-				    this.p1[1] = 80 + 125 * j
-				    this.p2[0] = this.p1[0] + 125 
-				    this.p2[1] = this.p1[1] + 125
-				    this.p3[0] = this.p1[0] + 250 
-				    this.p3[1] = this.p1[1] + 125
-				    this.p3[2] = this.p1[0] + 125
-				    this.p3[3] = this.p1[1] 
-				    this.p3[4] = this.p1[0] + 125
-				    this.p3[5] = this.p1[1] + 125
-				    this.p4[0] = this.p1[0] + 125
-				    this.p4[1] = this.p1[1] + 125
-				    this.p4[2] = this.p1[0] + 125
-				    this.p4[3] = this.p1[1] + 250 
-				    this.p4[4] = this.p1[0] 
-				    this.p4[5] = this.p1[1] + 125
-				    this.p5[0] = this.p1[0] 
-				    this.p5[1] = this.p1[1] + 125
-				    this.p5[2] = this.p1[0] 
-				    this.p5[3] = this.p1[1] 
-				    this.p5[4] = this.p1[0] - 125
-				    this.p5[5] = this.p1[1] 
-				    
-				}
-			    }
-			}
-		    } else if (this.orientation == "n") {
-			    for (i = 0; i <= 6; i++) {
-			        for (j = 0; j <= 5; j++) {
-				        if (sX >= 80 + 125 * i    && sX <= 205 + 125 * i && sY >= 80 + 125 * j && sY <= 205 + 125 * j) {
-				    this.p1[0] = 80 + 125 * i
-				    this.p1[1] = 80 + 125 * j
-				    this.p2[0] = this.p1[0] - 125 
-				    this.p2[1] = this.p1[1] + 125
-				    this.p3[0] = this.p1[0] + 125 
-				    this.p3[1] = this.p1[1] + 125
-				    this.p3[2] = this.p1[0] 
-				    this.p3[3] = this.p1[1] + 250
-				    this.p3[4] = this.p1[0] 
-				    this.p3[5] = this.p1[1] + 125
-				    this.p4[0] = this.p1[0] 
-				    this.p4[1] = this.p1[1] + 125
-				    this.p4[2] = this.p1[0] - 125
-				    this.p4[3] = this.p1[1] + 125
-				    this.p4[4] = this.p1[0] 
-				    this.p4[5] = this.p1[1] 
-				    this.p5[0] = this.p1[0] 
-				    this.p5[1] = this.p1[1] 
-				    this.p5[2] = this.p1[0] + 125
-				    this.p5[3] = this.p1[1] 
-				    this.p5[4] = this.p1[0] + 125
-				    this.p5[5] = this.p1[1] - 125
 				}
 			    }
 			}
