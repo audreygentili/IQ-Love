@@ -72,7 +72,7 @@ function draw() {
 		
 		a.forEach(element => element.afficher(mouseX, mouseY));
 
-		//detecterFin();
+		detecterFin();
 	}
 }
 
@@ -175,7 +175,7 @@ function state() {
 	}	
 }
 
-function detecterFin(num) {
+function detecterFin() {
 	if (solutionJeu.p1[0] == piece1.p1[0] && solutionJeu.p1[1] == piece1.p1[1] &&
 		solutionJeu.p2[0] == piece2.p1[0] && solutionJeu.p2[1] == piece2.p1[1] &&	
 		solutionJeu.p3[0] == piece3.p1[0] && solutionJeu.p3[1] == piece3.p1[1] &&
@@ -197,10 +197,13 @@ function detecterFin(num) {
 		solutionJeu.p3[3] == piece3.miroir && solutionJeu.p4[3] == piece4.miroir &&	
 		solutionJeu.p5[3] == piece5.miroir && solutionJeu.p6[3] == piece6.miroir &&
 		solutionJeu.p7[3] == piece7.miroir && solutionJeu.p8[3] == piece8.miroir &&
-		solutionJeu.p9[3] == piece9.mirori && solutionJeu.p10[3] == piece10.miroir)
+		solutionJeu.p9[3] == piece9.miroir && solutionJeu.p10[3] == piece10.miroir)
 	{
 		state();	
 	}
+}
+
+function makePiece(pattern) {
 }
 
 function selectedPiece() {
@@ -230,6 +233,7 @@ function mousePressed() {
 			pieces[i].pressed(mouseX, mouseY);
 		}
 	}
+	print(mouseX, mouseY);
 }
 
 function mouseReleased() {
