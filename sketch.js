@@ -13,6 +13,7 @@ var solutionC = [];
 var solutionE = [];
 var solutionJeu;
 var jeu = false;
+var gagner = false;
 var a = [];
 var b = [];
 var num;
@@ -21,6 +22,7 @@ var di;
 var mode;
 var showtext = false;
 var score = 0;
+var tabScore = [5, 10, 20];
 var p1 = [];
 var p2 = [];
 var p3 = [];
@@ -36,7 +38,6 @@ function setup() {
 	,makePiece5(705,330,"o",false,10));
 
 	patternD.push(pattern81);
-
 
 	selected = null;
 	jeu = false;
@@ -75,7 +76,9 @@ function draw() {
 		}
 	
 		textSize(32);
-		text("Grab pieces on their center",270, 40);
+		text("Attrapez les pièces par leur centre",270, 40);
+		textSize(25);
+		text("Votre score est de : "+score,320, 70);
 	
 		if (mirror_checked) {
 			rotate_left.hide();
@@ -85,11 +88,24 @@ function draw() {
 			rotate_right.show();
 		}
 		
+		b.forEach(element => element.afficher(0, 0));
 		a.forEach(element => element.afficher(mouseX, mouseY));
 
-		b.forEach(element => element.afficher(0, 0));
-
 		detecterFin();
+	}
+	if (gagner) {
+		di = createDiv('Bravo vous avez gagné !<br/>Votre score est de : '+score);
+		di.style('font-size', '32px');
+		di.style('color', '#ffffff');
+		di.style('text-align', 'center');
+		di.position(270, 350);
+
+		gagner = false;
+		mirror_checked = false;
+		replay = createButton("Rejouer");
+		replay.position(width/2,1200);
+		replay.size(200,100);
+		replay.mousePressed(state);
 	}
 }
 
@@ -242,6 +258,11 @@ function state() {
 		home.hide();
 		jeu = false;
 		setup();
+	} else if (gagner) {
+		rotate_left.hide();
+		rotate_right.hide();
+		mirror.hide();
+		home.hide();
 	} else {
 		start.hide();
 		di.hide();
@@ -275,6 +296,15 @@ function detecterFin() {
 		solutionJeu.p7[3] == piece7.miroir && solutionJeu.p8[3] == piece8.miroir &&
 		solutionJeu.p9[3] == piece9.miroir && solutionJeu.p10[3] == piece10.miroir)
 	{
+		if (patternD.includes(patternJeu)) {
+			score += tabScore[0];
+		} else if (patternC.includes(patternJeu)) {
+			score += tabScore[1];
+		} else if (patternE.includes(patternJeu)) {
+			score += tabScore[2];
+		}
+		jeu = false;
+		gagner = true;
 		state();	
 	}
 }
