@@ -345,6 +345,9 @@ function keyPressed() {
 }
 
 function makePiece3(sX,sY,orientation,miroir,num) {
+	p1 = [];
+	p2 = [];
+	p3 = [];
     p1[0] = sX
 	p1[1] = sY
     switch (num) {
@@ -402,6 +405,22 @@ function makePiece3(sX,sY,orientation,miroir,num) {
                 p3[4] = p1[0] + 125
                 p3[5] = p1[1] + 125
 			}
+			if (miroir) {
+				if (orientation == "o") {
+					p3[0] += 375;p3[2] += 125;
+					p3[4] += 125;
+				} else if (orientation == "n") {
+					p3[1] += 375;p3[3] += 125;
+					p3[5] += 125;
+				} else if (orientation == "e") {
+					p3[0] -= 375;p3[2] -= 125;
+					p3[4] -= 125;
+				} else if (orientation == "s") {
+					p3[1] -= 375;p3[3] -= 125;
+					p3[5] -= 125;
+				}
+			}
+			break;
 		case 7:
 		    if (orientation == "e") {
 				p1[2] = 125
@@ -463,7 +482,19 @@ function makePiece3(sX,sY,orientation,miroir,num) {
                 p3[3] = p1[1]
                 p3[4] = p1[0] + 125
                 p3[5] = p1[1] - 125
-			}    
+			} 
+			if (miroir) {
+				if (orientation == "o") {
+					p3[1] -= 125;p3[3] += 125;p3[5] += 125;p2[5] -= 125;p2[1] += 125;p2[3] -= 125;
+				} else if (orientation == "n") {
+					p3[0] += 125;p3[2] -= 125;p3[4] -= 125;p2[4] += 125;p2[0] -= 125;p2[2] += 125;
+				} else if (orientation == "e") {
+					p3[1] += 125;p3[3] -= 125;p3[5] -= 125;p2[5] += 125;p2[1] -= 125;p2[3] += 125;
+				} else if (orientation == "s") {
+					p3[0] -= 125;p3[2] += 125;p3[4] += 125;p2[4] -= 125;p2[0] += 125;p2[2] -= 125;
+				}
+			} 
+			break;  
 		case 8:
 		    if (orientation == "e") {
 				p1[2] = 125
@@ -518,6 +549,18 @@ function makePiece3(sX,sY,orientation,miroir,num) {
                 p3[2] = p1[0] + 125
                 p3[3] = p1[1] - 125
 		    }
+			if (miroir) {
+				if (orientation == "o") {
+					p3[3] += 125;p3[1] += 125;p3[5] -= 125;
+				} else if (orientation == "n") {
+					p3[2] -= 125;p3[0] -= 125;p3[4] += 125;
+				} else if (orientation == "e") {
+					p3[3] -= 125;p3[1] -= 125;p3[5] += 125;
+				} else if (orientation == "s") {
+					p3[2] += 125;p3[0] += 125;p3[4] -= 125;
+				}
+			}
+			break;
 	}
     col = tabColor[num - 1];
     var p = new Piece3(num,3,orientation,miroir,col,p1,p2,p3);
@@ -525,6 +568,10 @@ function makePiece3(sX,sY,orientation,miroir,num) {
 }
 
 function makePiece4(sX,sY,orientation,miroir,num) {
+	p1 = [];
+	p2 = [];
+	p3 = [];
+	p4 = [];
     p1[0] = sX
 	p1[1] = sY
     switch (num) {
@@ -598,6 +645,18 @@ function makePiece4(sX,sY,orientation,miroir,num) {
 				p4[2] = 125
                 p4[3] = 125
 			}
+			if (miroir) {
+				if (orientation == "o") {
+				    p3[3] += 125;p4[1] += 250;p3[1] -= 125;p3[5] += 125;		    
+			    } else if (orientation == "n") {
+				    p3[2] -= 125;p4[0] -= 250;p3[0] += 125;p3[4] -= 125;
+			    } else if (orientation == "e") {
+				    p3[3] -= 125;p4[1] -= 250;p3[1] += 125;p3[5] -= 125;
+			    } else if (orientation == "s") {
+				    p3[2] += 125;p4[0] += 250;p3[0] -= 125;p3[4] += 125;
+			    }
+			}
+			break;
 		case 2:
 			if (orientation == "o") {
 				p1[2] = 125
@@ -676,6 +735,23 @@ function makePiece4(sX,sY,orientation,miroir,num) {
                 p4[4] = p1[0] - 125
                 p4[5] = p1[1] - 125
             }
+			if (miroir) {
+				if (orientation == "o") {
+				    p3[3] += 125;p3[1] -= 125;p3[5] += 125;
+				    p4[5] += 375;p4[1] += 125;p4[3] += 125;
+			    } else if (orientation == "n") {
+				    p3[2] -= 125;p3[0] += 125;p3[4] -= 125;
+				    p4[4] -= 375;p4[0] -= 125;p4[2] -= 125;
+			    }
+			    if (orientation == "e") {
+				    p3[3] -= 125;p3[1] += 125;p3[5] -= 125;
+				    p4[5] -= 375;p4[1] -= 125;p4[3] -= 125;
+			    } else if (orientation == "s") {
+				    p3[2] += 125;p3[0] -= 125;p3[4] += 125;
+				    p4[4] += 375;p4[0] += 125;p4[2] += 125;
+			    }
+			}
+			break;
 		case 3:
 			if (orientation == "o") {
 				p1[2] = 125
@@ -754,12 +830,33 @@ function makePiece4(sX,sY,orientation,miroir,num) {
                 p4[4] = p1[0] + 125
                 p4[5] = p1[1]
 			}
+			if (miroir) {
+				if (orientation == "o") {
+				    p3[3] += 125;p3[1] -= 125;p3[5] += 125;
+				    p4[1] -=375;p4[3] -= 125;p4[5] -= 125;
+			    } else if (orientation == "n") {
+				    p3[2] -= 125;p3[0] += 125;p3[4] -= 125;
+				    p4[0] +=375;p4[2] += 125;p4[4] += 125;
+			    } else if (orientation == "e") {
+				    p3[3] -= 125;p3[1] += 125;p3[5] -= 125;
+				    p4[1] +=375;p4[3] += 125;p4[5] += 125;
+			    } else if (orientation == "s") {
+				    p3[2] += 125;p3[0] -= 125;p3[4] += 125;
+				    p4[0] -=375;p4[2] -= 125;p4[4] -= 125;
+			    }
+			}
+			break;
     }
     col = tabColor[num - 1];
     return new Piece4(num,4,orientation,miroir,col,p1,p2,p3,p4);
 }
 
 function makePiece5(sX,sY,orientation,miroir,num) {
+	p1 = [];
+	p2 = [];
+	p3 = [];
+	p4 = [];
+	p5 = [];
     p1[0] = sX
     p1[1] = sY
     switch (num) {
@@ -865,6 +962,31 @@ function makePiece5(sX,sY,orientation,miroir,num) {
                 p5[4] = p1[0] 
                 p5[5] = p1[1] + 250
             }
+			if (miroir) {
+				if (orientation == "o") {
+				    p3[1] += 125;p3[3] -= 125;p3[5] += 125;
+					p2[1] += 250;
+				    p4[1] += 125;p4[3] += 375;p4[5] += 125;
+				    p5[1] += 125;p5[3] -= 125;p5[5] -= 125;
+				    
+			    } else if (orientation == "n") {
+				    p3[0] -= 125;p3[2] += 125;p3[4] -= 125;
+					p2[0] -= 250;
+				    p4[0] -= 125;p4[2] -= 375;p4[4] -= 125;
+				    p5[0] -= 125;p5[2] += 125;p5[4] += 125;
+			    } else if (orientation == "e") {
+				    p3[1] -= 125;p3[3] += 125;p3[5] -= 125;
+					p2[1] -= 250;
+				    p4[1] -= 125;p4[3] -= 375;p4[5] -= 125;
+				    p5[1] -= 125;p5[3] += 125;p5[5] += 125;
+			    } else if (orientation == "s") {
+				    p3[0] += 125;p3[2] -= 125;p3[4] += 125;
+					p2[0] += 250;
+				    p4[0] += 125;p4[2] += 375;p4[4] += 125;
+				    p5[0] += 125;p5[2] -= 125;p5[4] -= 125;
+			    }
+			}
+			break;
 		case 5:
 		    if (orientation == "e") {
 				p1[2] = 125
@@ -975,6 +1097,31 @@ function makePiece5(sX,sY,orientation,miroir,num) {
                 p5[4] = p1[0] + 125
                 p5[5] = p1[1] - 125
 			}
+			if (miroir) {
+				if (orientation == "o") {
+					p3[1] -= 125;p3[3] -= 125;p3[5] -= 375;
+					p2[1] -=375;p2[3] -= 125; p2[5] -= 125;
+					p4[1] -= 125;p4[3] -= 125;p4[5] += 125;
+					p5[1] -= 125;p5[3] += 125;p5[5] += 125;
+					
+				} else if (orientation == "n") {
+					p3[0] += 125;p3[2] += 125;p3[4] += 375;
+					p2[0] +=375;p2[2] += 125; p2[4] += 125;
+					p4[0] += 125;p4[2] += 125;p4[4] -= 125;
+					p5[0] += 125;p5[2] -= 125;p5[4] -= 125; 
+				} else if (orientation == "e") {
+					p3[1] += 125;p3[3] += 125;p3[5] += 375;
+					p2[1] +=375;p2[3] += 125; p2[5] += 125;
+					p4[1] += 125;p4[3] += 125;p4[5] -= 125;
+					p5[1] += 125;p5[3] -= 125;p5[5] -= 125;
+				} else if (orientation == "s") {
+					p3[0] -= 125;p3[2] -= 125;p3[4] -= 375;
+					p2[0] -=375;p2[2] -= 125; p2[4] -= 125;
+					p4[0] -= 125;p4[2] -= 125;p4[4] += 125;
+					p5[0] -= 125;p5[2] += 125;p5[4] += 125;
+				}
+			}
+			break;
 		case 9:
 		    if (orientation == "e") {
 				p1[2] = 125
@@ -1077,6 +1224,27 @@ function makePiece5(sX,sY,orientation,miroir,num) {
 				p2[2] = 125
                 p2[3] = 125
 			}
+			if (miroir) {
+				if (orientation == "o") {
+					p3[1] -= 375;p3[3] -= 125;p3[5] -= 125;
+					p4[1] -= 125;p4[3] -= 125;p4[5] -=375;
+					p5[1] -= 125;p5[3] -= 125;p5[5] += 125; 
+					
+				} else if (orientation == "n") {
+					p3[0] += 375;p3[2] += 125;p3[4] += 125;
+					p4[0] += 125;p4[2] += 125;p4[4] +=375;
+					p5[0] += 125;p5[2] += 125;p5[4] -= 125; 
+				} else if (orientation == "e") {
+					p3[1] += 375;p3[3] += 125;p3[5] += 125;
+					p4[1] += 125;p4[3] += 125;p4[5] +=375;
+					p5[1] += 125;p5[3] += 125;p5[5] -= 125; 
+				} else if (orientation == "s") {
+					p3[0] -= 375;p3[2] -= 125;p3[4] -= 125;
+					p4[0] -= 125;p4[2] -= 125;p4[4] -=375;
+					p5[0] -= 125;p5[2] -= 125;p5[4] += 125; 
+				}
+			}
+			break;
 		case 10:
             if (orientation == "e") {
 				p1[2] = 125
@@ -1179,6 +1347,30 @@ function makePiece5(sX,sY,orientation,miroir,num) {
                 p3[4] = p1[0] 
                 p3[5] = p1[1] - 125
 			}
+			if (miroir) {
+				if (orientation == "o") {
+					p3[1] -= 375;p3[3] -= 125;p3[5] -= 125;
+					p2[1] -= 250;
+					p4[1] += 125;p4[3] -= 125;p4[5] -= 125;
+					p5[1] += 375;p5[3] += 125;p5[5] += 125;
+				} else if (orientation == "n") {
+					p3[0] += 375;p3[2] += 125;p3[4] += 125;
+					p2[0] += 250;
+					p4[0] -= 125;p4[2] += 125;p4[4] += 125;
+					p5[0] -= 375;p5[2] -= 125;p5[4] -= 125; 
+				} else if (orientation == "e") {
+					p3[1] += 375;p3[3] += 125;p3[5] += 125;
+					p2[1] += 250;
+					p4[1] -= 125;p4[3] += 125;p4[5] += 125;
+					p5[1] -= 375;p5[3] -= 125;p5[5] -= 125;
+				} else if (orientation == "s") {
+					p3[0] -= 375;p3[2] -= 125;p3[4] -= 125;
+					p2[0] -= 250;
+					p4[0] += 125;p4[2] -= 125;p4[4] -= 125;
+					p5[0] += 375;p5[2] += 125;p5[4] += 125;
+				}
+			}
+			break;
     }		
     col = tabColor[num - 1];
     return new Piece5(num,5,orientation,miroir,col,p1,p2,p3,p4,p5);
