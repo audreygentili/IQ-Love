@@ -57,6 +57,13 @@ function setup() {
 	start.position(width/2,height/2);
 	start.size(200,100);
 	start.mousePressed(state);
+
+	replay = createButton("Rejouer");
+	replay.position(width/2,500);
+	replay.size(200,100);
+	replay.mousePressed(state);
+
+	replay.hide();
 }
 
 function draw() { 
@@ -99,13 +106,9 @@ function draw() {
 		di.style('color', '#ffffff');
 		di.style('text-align', 'center');
 		di.position(270, 350);
-
+		replay.show();
 		gagner = false;
 		mirror_checked = false;
-		replay = createButton("Rejouer");
-		replay.position(width/2,1200);
-		replay.size(200,100);
-		replay.mousePressed(state);
 	}
 }
 
@@ -267,6 +270,7 @@ function state() {
 		start.hide();
 		di.hide();
 		slider.hide();
+		replay.hide();
 		jouer();
 		jeu = true;
 	}	
