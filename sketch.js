@@ -5,17 +5,36 @@
 var mirror_checked = false;
 var selected = null;
 var pieces = [];
-var patterns = [];
-var solutions = [];
-var solutionJeu = [];
+var patternD = [];
+var patternC = [];
+var patternE = [];
+var patternJeu;
+var solutionD = [];
+var solutionC = [];
+var solutionE = [];
+var solutionJeu;
 var jeu = false;
 var a = [];
 var num;
+let slider;
+var di;
+var mode;
+var showtext = false;
+var score = 0;
 
 function setup() {
+	selected = null;
 	jeu = false;
 	createCanvas(910, 1500);
 	background(50);
+	di = createDiv('Choisissez la difficulté<br/>Débutant    Confirmé     Expert');
+	di.style('font-size', '32px');
+	di.style('color', '#ffffff');
+	di.style('text-align', 'center');
+	di.position(270, 350);
+	slider = createSlider(1, 3, 1, 1);
+	slider.position(330, 450);
+	slider.style('width', '230px');
 	textSize(32);
 	fill(0, 102, 153);
 	start = createButton("Commencez");
@@ -25,8 +44,8 @@ function setup() {
 }
 
 function draw() { 
+	background(50);
 	if (jeu) {
-		background(50);
 		fill(0);
 		strokeWeight(1);
 		rect(80,80,750,625);
@@ -41,7 +60,7 @@ function draw() {
 		}
 	
 		textSize(32);
-		text("Grab pieces on their center",270, 40)
+		text("Grab pieces on their center",270, 40);
 	
 		if (mirror_checked) {
 			rotate_left.hide();
@@ -53,12 +72,11 @@ function draw() {
 		
 		a.forEach(element => element.afficher(mouseX, mouseY));
 
-		detecterFin();
+		//detecterFin();
 	}
 }
 
 function jouer() {
-	start.hide();
 	rotate_left = createButton("rotate left <--");
 	rotate_left.position(50,1000);
 	rotate_left.size(200,100);
@@ -79,6 +97,18 @@ function jouer() {
 	home.size(200,100);
 	home.mousePressed(state);
 
+	mode = slider.value();
+	print(mode);
+	if (mode == 1) {
+		patternJeu = patternD[0];
+		solutionJeu = solutionD[0];
+	} else if (mode == 2) {
+		patternJeu = patternC[0];
+		solutionJeu = solutionC[0];
+	} else {
+		patternJeu = patternE[0];
+		solutionJeu = solutionE[0];
+	}
 	//vert clair
 	piece1 = new Piece4(1, 4, "e", false, color(134,207,11), [205,80,125,125], [80,80,125,125], [330,80,455,205,330,205], [80,205,125,125]);
 	//new Piece4(1, 4, "o", color(134,207,11),[80,205,205,330,205,205], [330,205,125,125], [205,205,125,125], [330,80,125,125]);
@@ -124,7 +154,7 @@ function jouer() {
 
 	a = [];
 	for (let i = 0; i < pieces.length; i++) {
-			append(a, pieces[i]);
+		append(a, pieces[i]);
 	}
 }
   
@@ -138,6 +168,8 @@ function state() {
 		setup();
 	} else {
 		start.hide();
+		di.hide();
+		slider.hide();
 		jouer();
 		jeu = true;
 	}	
@@ -188,11 +220,6 @@ function mouseReleased() {
 			pieces[i].clip();
 		}
 	}
-}
-
-function clipPiece() {
-	sX = mouseX;
-	sY = mouseY;
 }
 
 function rotationL() {
