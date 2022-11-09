@@ -201,6 +201,49 @@ class Piece3 extends Piece {
 			case 6:
 				if (this.miroir) {
 					this.miroir = false;
+					if (this.orientation == "s") {
+								this.p2[0] = this.p1[0] - 125
+								this.p2[1] = this.p1[1]
+								this.p3[0] = this.p1[0] + 125
+								this.p3[1] = this.p1[1] + 250
+								this.p3[2] = this.p1[0] + 125 
+								this.p3[3] = this.p1[1] + 125
+								this.p3[4] = this.p1[0]
+								this.p3[5] = this.p1[1] + 125
+						} else if (this.orientation == "o") {
+
+								this.p2[0] = this.p1[0]
+								this.p2[1] = this.p1[1] - 125
+								this.p3[0] = this.p1[0] - 125
+								this.p3[1] = this.p1[1] + 125
+								this.p3[2] = this.p1[0] 
+								this.p3[3] = this.p1[1] + 125
+								this.p3[4] = this.p1[0]
+								this.p3[5] = this.p1[1]
+
+						} else if (this.orientation == "n") {
+
+								this.p2[0] = this.p1[0] + 125
+								this.p2[1] = this.p1[1]
+								this.p3[0] = this.p1[0] 
+								this.p3[1] = this.p1[1] - 125
+								this.p3[2] = this.p1[0]
+								this.p3[3] = this.p1[1]
+								this.p3[4] = this.p1[0] + 125
+								this.p3[5] = this.p1[1]
+
+						} else if (this.orientation == "e") {
+
+								this.p2[0] = this.p1[0]
+								this.p2[1] = this.p1[1] + 125
+								this.p3[0] = this.p1[0] + 250
+								this.p3[1] = this.p1[1]
+								this.p3[2] = this.p1[0] + 125 
+								this.p3[3] = this.p1[1]
+								this.p3[4] = this.p1[0] + 125
+								this.p3[5] = this.p1[1] + 125
+
+						}
 				} else {
 					if (this.orientation == "o") {
 						this.p3[0] += 375;this.p3[2] += 125;
@@ -221,13 +264,73 @@ class Piece3 extends Piece {
 			case 7:
 				if (this.miroir) {
 					this.miroir = false;
+					if (this.orientation == "e") {
+
+									this.p2[0] = this.p1[0] + 125
+									this.p2[1] = this.p1[1]
+									this.p2[2] = this.p1[0] + 125
+									this.p2[3] = this.p1[1] + 125
+									this.p2[4] = this.p1[0] + 250
+									this.p2[5] = this.p1[1] + 125
+									this.p3[0] = this.p1[0]
+									this.p3[1] = this.p1[1] + 125
+									this.p3[2] = this.p1[0]
+									this.p3[3] = this.p1[1]
+									this.p3[4] = this.p1[0] - 125
+									this.p3[5] = this.p1[1]
+
+					} else if (this.orientation == "s") {
+
+									this.p2[0] = this.p1[0] + 125
+									this.p2[1] = this.p1[1] + 125
+									this.p2[2] = this.p1[0]
+									this.p2[3] = this.p1[1] + 125
+									this.p2[4] = this.p1[0]
+									this.p2[5] = this.p1[1] + 250
+									this.p3[0] = this.p1[0]
+									this.p3[1] = this.p1[1]
+									this.p3[2] = this.p1[0] + 125
+									this.p3[3] = this.p1[1]
+									this.p3[4] = this.p1[0] + 125
+									this.p3[5] = this.p1[1] - 125
+
+					} else if (this.orientation == "o") {
+
+							this.p2[0] = this.p1[0] + 125
+							this.p2[1] = this.p1[1]
+							this.p2[2] = this.p1[0] + 125
+							this.p2[3] = this.p1[1] + 125
+							this.p2[4] = this.p1[0] + 250
+							this.p2[5] = this.p1[1] + 125
+							this.p3[0] = this.p1[0]
+							this.p3[1] = this.p1[1] + 125
+							this.p3[2] = this.p1[0]
+							this.p3[3] = this.p1[1]
+							this.p3[4] = this.p1[0] - 125
+							this.p3[5] = this.p1[1]
+
+					} else if (this.orientation == "n") {
+									this.p2[0] = this.p1[0] + 125
+									this.p2[1] = this.p1[1] + 125
+									this.p2[2] = this.p1[0]
+									this.p2[3] = this.p1[1] + 125
+									this.p2[4] = this.p1[0]
+									this.p2[5] = this.p1[1] + 250
+									this.p3[0] = this.p1[0]
+									this.p3[1] = this.p1[1]
+									this.p3[2] = this.p1[0] + 125
+									this.p3[3] = this.p1[1]
+									this.p3[4] = this.p1[0] + 125
+									this.p3[5] = this.p1[1] - 125
+
+					}
 				} else {
 					if (this.orientation == "o") {
-						this.p3[1] -= 125;this.p3[3] += 125;this.p3[5] += 125;this.p2[4] -= 125;this.p2[1] += 125;this.p2[3] -= 125;
+						this.p3[1] -= 125;this.p3[3] += 125;this.p3[5] += 125;this.p2[5] -= 125;this.p2[1] += 125;this.p2[3] -= 125;
 					} else if (this.orientation == "n") {
 						this.p3[0] += 125;this.p3[2] -= 125;this.p3[4] -= 125;this.p2[4] += 125;this.p2[0] -= 125;this.p2[2] += 125;
 					} else if (this.orientation == "e") {
-						this.p3[1] += 125;this.p3[3] -= 125;this.p3[5] -= 125;this.p2[4] += 125;this.p2[1] -= 125;this.p2[3] += 125;
+						this.p3[1] += 125;this.p3[3] -= 125;this.p3[5] -= 125;this.p2[5] += 125;this.p2[1] -= 125;this.p2[3] += 125;
 					} else if (this.orientation == "s") {
 						this.p3[0] -= 125;this.p3[2] += 125;this.p3[4] += 125;this.p2[4] -= 125;this.p2[0] += 125;this.p2[2] -= 125;
 					}
@@ -237,6 +340,50 @@ class Piece3 extends Piece {
 			case 8:
 				if (this.miroir) {
 					this.miroir = false;
+					if (this.orientation == "e") {
+								this.p2[0] = this.p1[0] - 125
+								this.p2[1] = this.p1[1] 
+								this.p3[4] = this.p1[0] + 125
+								this.p3[5] = this.p1[1] 
+								this.p3[0] = this.p1[0] + 125
+								this.p3[1] = this.p1[1] + 125
+								this.p3[2] = this.p1[0] + 250
+								this.p3[3] = this.p1[1] + 125
+
+						} else if (this.orientation == "s") {
+
+								this.p2[0] = this.p1[0] 
+								this.p2[1] = this.p1[1] - 125
+								this.p3[4] = this.p1[0] + 125
+								this.p3[5] = this.p1[1] + 125
+								this.p3[0] = this.p1[0] 
+								this.p3[1] = this.p1[1] + 125
+								this.p3[2] = this.p1[0]
+								this.p3[3] = this.p1[1] + 250
+
+						} else if (this.orientation == "o") {
+
+								this.p2[0] = this.p1[0] + 125
+								this.p2[1] = this.p1[1] 
+								this.p3[4] = this.p1[0] 
+								this.p3[5] = this.p1[1] + 125
+								this.p3[0] = this.p1[0] 
+								this.p3[1] = this.p1[1]
+								this.p3[2] = this.p1[0] - 125
+								this.p3[3] = this.p1[1] 
+								
+						} else if (this.orientation == "n") {
+
+								this.p2[0] = this.p1[0] 
+								this.p2[1] = this.p1[1] + 125
+								this.p3[4] = this.p1[0] 
+								this.p3[5] = this.p1[1] 
+								this.p3[0] = this.p1[0] + 125
+								this.p3[1] = this.p1[1] 
+								this.p3[2] = this.p1[0] + 125
+								this.p3[3] = this.p1[1] - 125
+
+						}
 				} else {
 					if (this.orientation == "o") {
 						this.p3[3] += 125;this.p3[1] += 125;this.p3[5] -= 125;
@@ -720,17 +867,146 @@ class Piece4 extends Piece {
 	rotationM() {
 		switch (this.nom) {
 		    case 1:
+				if ( this.miroir) {
+					this.miroir = false;
+					if (this.orientation == "o") {
+
+							this.p2[0] = this.p1[0] + 125
+							this.p2[1] = this.p1[1] 
+							this.p3[2] = this.p1[0] - 125
+							this.p3[3] = this.p1[1] 
+							this.p3[4] = this.p1[0]
+							this.p3[5] = this.p1[1]    
+							this.p3[0] = this.p1[0] 
+							this.p3[1] = this.p1[1] + 125 
+							this.p4[0] = this.p1[0] + 125
+							this.p4[1] = this.p1[1] - 125
+	
+					} else if (this.orientation == "n") {
+
+							this.p2[0] = this.p1[0]
+							this.p2[1] = this.p1[1] + 125 
+							this.p3[2] = this.p1[0] + 125
+							this.p3[3] = this.p1[1] - 125
+							this.p3[4] = this.p1[0] + 125
+							this.p3[5] = this.p1[1]    
+							this.p3[0] = this.p1[0] 
+							this.p3[1] = this.p1[1] 
+							this.p4[0] = this.p1[0] + 125
+							this.p4[1] = this.p1[1] + 125
+		
+					} else if (this.orientation == "e") {
+
+						this.p2[0] = this.p1[0] - 125
+						this.p2[1] = this.p1[1] 
+						this.p3[2] = this.p1[0] + 250
+						this.p3[3] = this.p1[1] + 125
+						this.p3[4] = this.p1[0] + 125
+						this.p3[5] = this.p1[1] + 125 
+						this.p3[0] = this.p1[0] + 125
+						this.p3[1] = this.p1[1] 
+						this.p4[0] = this.p1[0] - 125
+						this.p4[1] = this.p1[1] + 125
+
+					} else if (this.orientation == "s") {
+
+							this.p2[0] = this.p1[0]
+							this.p2[1] = this.p1[1] - 125 
+							this.p3[2] = this.p1[0]
+							this.p3[3] = this.p1[1] + 250
+							this.p3[4] = this.p1[0]
+							this.p3[5] = this.p1[1] + 125    
+							this.p3[0] = this.p1[0] + 125
+							this.p3[1] = this.p1[1] + 125
+							this.p4[0] = this.p1[0] - 125
+							this.p4[1] = this.p1[1] - 125
+							}
+
+				} else {
+				this.miroir = true;
 			    if (this.orientation == "o") {
-				    this.p3[3] += 125;this.p4[1] += 250;this.p3[0] += 125;this.p3[4] -= 125;		    
+				    this.p3[3] += 125;this.p4[1] += 250;this.p3[1] -= 125;this.p3[5] += 125;		    
 			    } else if (this.orientation == "n") {
-				    this.p3[2] -= 125;this.p4[0] -= 250;this.p3[1] -= 125;this.p3[5] += 125;
+				    this.p3[2] -= 125;this.p4[0] -= 250;this.p3[0] += 125;this.p3[4] -= 125;
 			    } else if (this.orientation == "e") {
-				    this.p3[3] -= 125;this.p4[1] -= 250;this.p3[0] -= 125;this.p3[4] += 125;
+				    this.p3[3] -= 125;this.p4[1] -= 250;this.p3[1] += 125;this.p3[5] -= 125;
 			    } else if (this.orientation == "s") {
-				    this.p3[2] += 125;this.p4[0] += 250;this.p3[1] += 125;this.p3[5] -= 125;
+				    this.p3[2] += 125;this.p4[0] += 250;this.p3[0] -= 125;this.p3[4] += 125;
 			    }
+			}
 			    break;
 		    case 2:
+				if (this.miroir) {
+					this.miroir = false;
+					if (this.orientation == "o") {
+
+							this.p2[0] = this.p1[0] + 125
+							this.p2[1] = this.p1[1] 
+							this.p3[0] = this.p1[0] 
+							this.p3[1] = this.p1[1] + 125
+							this.p3[2] = this.p1[0] - 125
+							this.p3[3] = this.p1[1] 
+							this.p3[4] = this.p1[0]
+							this.p3[5] = this.p1[1]     
+							this.p4[0] = this.p1[0] + 125
+							this.p4[1] = this.p1[1] 
+							this.p4[2] = this.p1[0] + 250
+							this.p4[3] = this.p1[1] 
+							this.p4[4] = this.p1[0] + 250
+							this.p4[5] = this.p1[1] - 125
+						
+					} else if (this.orientation == "n") {
+							this.p2[0] = this.p1[0]
+							this.p2[1] = this.p1[1] + 125 
+							this.p3[0] = this.p1[0] 
+							this.p3[1] = this.p1[1] 
+							this.p3[2] = this.p1[0] + 125
+							this.p3[3] = this.p1[1] - 125
+							this.p3[4] = this.p1[0] + 125
+							this.p3[5] = this.p1[1]    
+							this.p4[0] = this.p1[0] + 125
+							this.p4[1] = this.p1[1] + 125
+							this.p4[2] = this.p1[0] + 125
+							this.p4[3] = this.p1[1] + 250
+							this.p4[4] = this.p1[0] + 250
+							this.p4[5] = this.p1[1] + 250
+
+						
+					} else if (this.orientation == "e") {
+							this.p2[0] = this.p1[0] - 125
+							this.p2[1] = this.p1[1] 
+							this.p3[0] = this.p1[0] + 125
+							this.p3[1] = this.p1[1] 
+							this.p3[2] = this.p1[0] + 250
+							this.p3[3] = this.p1[1] + 125
+							this.p3[4] = this.p1[0] + 125
+							this.p3[5] = this.p1[1] + 125 
+							this.p4[0] = this.p1[0] 
+							this.p4[1] = this.p1[1] + 125
+							this.p4[2] = this.p1[0] - 125
+							this.p4[3] = this.p1[1] + 125
+							this.p4[4] = this.p1[0] - 125
+							this.p4[5] = this.p1[1] + 250
+						
+					} else if (this.orientation == "s") {
+							this.p2[0] = this.p1[0]
+							this.p2[1] = this.p1[1] - 125 
+							this.p3[0] = this.p1[0] + 125
+							this.p3[1] = this.p1[1] + 125
+							this.p3[2] = this.p1[0] 
+							this.p3[3] = this.p1[1] + 250
+							this.p3[4] = this.p1[0]
+							this.p3[5] = this.p1[1] + 125    
+							this.p4[0] = this.p1[0] 
+							this.p4[1] = this.p1[1] 
+							this.p4[2] = this.p1[0] 
+							this.p4[3] = this.p1[1] - 125
+							this.p4[4] = this.p1[0] - 125
+							this.p4[5] = this.p1[1] - 125
+					}
+
+				} else {
+				this.miroir = true;
 			    if (this.orientation == "o") {
 				    this.p3[3] += 125;this.p3[1] -= 125;this.p3[5] += 125;
 				    this.p4[5] += 375;this.p4[1] += 125;this.p4[3] += 125;
@@ -745,8 +1021,84 @@ class Piece4 extends Piece {
 				    this.p3[2] += 125;this.p3[0] -= 125;this.p3[4] += 125;
 				    this.p4[4] += 375;this.p4[0] += 125;this.p4[2] += 125;
 			    }
+			}
 			    break;
 		    case 3:
+				if (this.miroir) {
+					this.miroir = false;
+					if (this.orientation == "o") {
+
+							this.p2[0] = this.p1[0] + 125
+							this.p2[1] = this.p1[1] 
+							this.p3[0] = this.p1[0] 
+							this.p3[1] = this.p1[1] + 125
+							this.p3[2] = this.p1[0] - 125
+							this.p3[3] = this.p1[1] 
+							this.p3[4] = this.p1[0]
+							this.p3[5] = this.p1[1]
+							this.p4[0] = this.p1[0] + 125
+							this.p4[1] = this.p1[1] + 250
+							this.p4[2] = this.p1[0] + 250
+							this.p4[3] = this.p1[1] + 125
+							this.p4[4] = this.p1[0] + 125
+							this.p4[5] = this.p1[1] + 125
+						
+					} else if (this.orientation == "n") {
+
+							this.p2[0] = this.p1[0]
+							this.p2[1] = this.p1[1] + 125 
+							this.p3[0] = this.p1[0] 
+							this.p3[1] = this.p1[1] 
+							this.p3[2] = this.p1[0] + 125
+							this.p3[3] = this.p1[1] - 125
+							this.p3[4] = this.p1[0] + 125
+							this.p3[5] = this.p1[1]    
+							this.p4[0] = this.p1[0] - 125
+							this.p4[1] = this.p1[1] + 125
+							this.p4[2] = this.p1[0]
+							this.p4[3] = this.p1[1] + 250
+							this.p4[4] = this.p1[0]
+							this.p4[5] = this.p1[1] + 125	
+
+						
+					} else if (this.orientation == "e") {
+
+							this.p2[0] = this.p1[0] - 125
+							this.p2[1] = this.p1[1] 
+							this.p3[0] = this.p1[0] + 125
+							this.p3[1] = this.p1[1] 
+							this.p3[2] = this.p1[0] + 250
+							this.p3[3] = this.p1[1] + 125
+							this.p3[4] = this.p1[0] + 125
+							this.p3[5] = this.p1[1] + 125 
+							this.p4[0] = this.p1[0] 
+							this.p4[1] = this.p1[1] - 125
+							this.p4[2] = this.p1[0] - 125
+							this.p4[3] = this.p1[1]
+							this.p4[4] = this.p1[0]
+							this.p4[5] = this.p1[1]
+
+						
+					} else if (this.orientation == "s") {
+
+							this.p2[0] = this.p1[0]
+							this.p2[1] = this.p1[1] - 125 
+							this.p3[0] = this.p1[0] + 125
+							this.p3[1] = this.p1[1] + 125
+							this.p3[2] = this.p1[0] 
+							this.p3[3] = this.p1[1] + 250
+							this.p3[4] = this.p1[0]
+							this.p3[5] = this.p1[1] + 125   
+							this.p4[0] = this.p1[0] + 250
+							this.p4[1] = this.p1[1] 
+							this.p4[2] = this.p1[0] + 125
+							this.p4[3] = this.p1[1] - 125
+							this.p4[4] = this.p1[0] + 125
+							this.p4[5] = this.p1[1]
+
+					}
+				} else {
+				this.miroir = true;
 			    if (this.orientation == "o") {
 				    this.p3[3] += 125;this.p3[1] -= 125;this.p3[5] += 125;
 				    this.p4[1] -=375;this.p4[3] -= 125;this.p4[5] -= 125;
@@ -760,6 +1112,7 @@ class Piece4 extends Piece {
 				    this.p3[2] += 125;this.p3[0] -= 125;this.p3[4] += 125;
 				    this.p4[0] -=375;this.p4[2] -= 125;this.p4[4] -= 125;
 			    }
+			}
 			    break;
 	    
 		 	 }
@@ -1366,31 +1719,235 @@ class Piece5 extends Piece {
 	rotationM() {
 		switch (this.nom) {
 		    case 4:
+				if (this.miroir) {
+					this.miroir = false;
+					if (this.orientation == "e") {	
+								this.p2[0] = this.p1[0] + 125
+								this.p2[1] = this.p1[1] + 125
+								this.p3[0] = this.p1[0] + 250
+								this.p3[1] = this.p1[1] + 125
+								this.p3[2] = this.p1[0] + 125
+								this.p3[3] = this.p1[1] 
+								this.p3[4] = this.p1[0] + 125
+								this.p3[5] = this.p1[1] + 125
+								this.p4[0] = this.p1[0] + 125
+								this.p4[1] = this.p1[1] + 125
+								this.p4[2] = this.p1[0] + 125
+								this.p4[3] = this.p1[1] + 250
+								this.p4[4] = this.p1[0]
+								this.p4[5] = this.p1[1] + 125
+								this.p5[0] = this.p1[0] 
+								this.p5[1] = this.p1[1] + 125
+								this.p5[2] = this.p1[0]
+								this.p5[3] = this.p1[1]
+								this.p5[4] = this.p1[0] - 125
+								this.p5[5] = this.p1[1]
+
+				} else if (this.orientation == "s") {
+								this.p2[0] = this.p1[0] - 125
+								this.p2[1] = this.p1[1] + 125
+								this.p3[0] = this.p1[0]
+								this.p3[1] = this.p1[1] + 250
+								this.p3[2] = this.p1[0] + 125
+								this.p3[3] = this.p1[1] + 125
+								this.p3[4] = this.p1[0]
+								this.p3[5] = this.p1[1] + 125
+								this.p4[0] = this.p1[0]
+								this.p4[1] = this.p1[1] + 125
+								this.p4[2] = this.p1[0] - 125
+								this.p4[3] = this.p1[1] + 125
+								this.p4[4] = this.p1[0]
+								this.p4[5] = this.p1[1]
+								this.p5[0] = this.p1[0]  
+								this.p5[1] = this.p1[1] 
+								this.p5[2] = this.p1[0] + 125
+								this.p5[3] = this.p1[1]
+								this.p5[4] = this.p1[0] + 125
+								this.p5[5] = this.p1[1] - 125
+
+				} else if (this.orientation == "o") {
+								this.p2[0] = this.p1[0] - 125
+								this.p2[1] = this.p1[1] - 125
+								this.p3[0] = this.p1[0] - 125
+								this.p3[1] = this.p1[1]
+								this.p3[2] = this.p1[0]
+								this.p3[3] = this.p1[1] + 125 
+								this.p3[4] = this.p1[0]
+								this.p3[5] = this.p1[1]
+								this.p4[0] = this.p1[0]
+								this.p4[1] = this.p1[1] 
+								this.p4[2] = this.p1[0]
+								this.p4[3] = this.p1[1] - 125
+								this.p4[4] = this.p1[0] + 125
+								this.p4[5] = this.p1[1]
+								this.p5[0] = this.p1[0] + 125 
+								this.p5[1] = this.p1[1]
+								this.p5[2] = this.p1[0] + 125
+								this.p5[3] = this.p1[1] + 125
+								this.p5[4] = this.p1[0] + 250
+								this.p5[5] = this.p1[1] + 125
+				} else if (this.orientation == "n") {
+								this.p2[0] = this.p1[0] + 125
+								this.p2[1] = this.p1[1] - 125
+								this.p3[0] = this.p1[0] + 126
+								this.p3[1] = this.p1[1] - 125
+								this.p3[2] = this.p1[0]
+								this.p3[3] = this.p1[1] 
+								this.p3[4] = this.p1[0] + 125
+								this.p3[5] = this.p1[1]
+								this.p4[0] = this.p1[0] + 125
+								this.p4[1] = this.p1[1]
+								this.p4[2] = this.p1[0] + 250
+								this.p4[3] = this.p1[1]
+								this.p4[4] = this.p1[0] + 125
+								this.p4[5] = this.p1[1] + 125
+								this.p5[0] = this.p1[0] + 125
+								this.p5[1] = this.p1[1] + 125
+								this.p5[2] = this.p1[0]
+								this.p5[3] = this.p1[1] + 125
+								this.p5[4] = this.p1[0] 
+								this.p5[5] = this.p1[1] + 250
+				}
+				} else {
+				this.miroir = true;
 			    if (this.orientation == "o") {
-				    this.p3[1] += 250;this.p3[5] += 250;this.p2[1] +=375;
-				    this.p4[1] += 125;this.p4[3] += 500;this.p4[5] += 125;
-				    this.p5[1] += 250;
+				    this.p3[1] += 125;this.p3[3] -= 125;this.p3[5] += 125;
+					this.p2[1] += 250;
+				    this.p4[1] += 125;this.p4[3] += 375;this.p4[5] += 125;
+				    this.p5[1] += 125;this.p5[3] -= 125;this.p5[5] -= 125;
 				    
 			    } else if (this.orientation == "n") {
-				    this.p3[0] -= 250;this.p3[4] -= 250;this.p2[0] -=375;
-				    this.p4[0] -= 125;this.p4[2] -= 500;this.p4[4] -= 125;
-				    this.p5[0] -= 250; 
+				    this.p3[0] -= 125;this.p3[2] += 125;this.p3[4] -= 125;
+					this.p2[0] -= 250;
+				    this.p4[0] -= 125;this.p4[2] -= 375;this.p4[4] -= 125;
+				    this.p5[0] -= 125;this.p5[2] += 125;this.p5[4] += 125;
 			    } else if (this.orientation == "e") {
-				    this.p3[1] -= 250;this.p3[5] -= 250;this.p2[1] -=375;
-				    this.p4[1] -= 125;this.p4[3] -= 500;this.p4[5] -= 125;
-				    this.p5[1] -= 250; 
+				    this.p3[1] -= 125;this.p3[3] += 125;this.p3[5] -= 125;
+					this.p2[1] -= 250;
+				    this.p4[1] -= 125;this.p4[3] -= 375;this.p4[5] -= 125;
+				    this.p5[1] -= 125;this.p5[3] += 125;this.p5[5] += 125;
 			    } else if (this.orientation == "s") {
-				    this.p3[0] += 250;this.p3[4] += 250;this.p2[0] +=375;
-				    this.p4[0] += 125;this.p4[2] += 500;this.p4[4] += 125;
-				    this.p5[0] += 250; 
-			    }
+				    this.p3[0] += 125;this.p3[2] -= 125;this.p3[4] += 125;
+					this.p2[0] += 250;
+				    this.p4[0] += 125;this.p4[2] += 375;this.p4[4] += 125;
+				    this.p5[0] += 125;this.p5[2] -= 125;this.p5[4] -= 125;
+			    }}
 			    break;
 		    case 5:
+				if (this.miroir) {
+					this.miroir = false;
+					if (this.orientation == "e") {
+								this.p3[0] = this.p1[0] - 125
+								this.p3[1] = this.p1[1]
+								this.p3[2] = this.p1[0]
+								this.p3[3] = this.p1[1]
+								this.p3[4] = this.p1[0]
+								this.p3[5] = this.p1[1] - 125
+								this.p4[0] = this.p1[0] - 125
+								this.p4[1] = this.p1[1]
+								this.p4[2] = this.p1[0]
+								this.p4[3] = this.p1[1]
+								this.p4[4] = this.p1[0]
+								this.p4[5] = this.p1[1] + 125
+								this.p2[2] = this.p1[0]
+								this.p2[3] = this.p1[1]
+								this.p2[0] = this.p1[0]
+								this.p2[1] = this.p1[1] - 125
+								this.p2[4] = this.p1[0] + 125
+								this.p2[5] = this.p1[1]
+								this.p5[0] = this.p1[0] + 125
+								this.p5[1] = this.p1[1]
+								this.p5[2] = this.p1[0] + 125
+								this.p5[3] = this.p1[1] + 125
+								this.p5[4] = this.p1[0] + 250
+								this.p5[5] = this.p1[1] + 125
+
+						} else if (this.orientation == "s") {
+								this.p3[0] = this.p1[0] + 125 
+								this.p3[1] = this.p1[1] - 125
+								this.p3[2] = this.p1[0] + 125 
+								this.p3[3] = this.p1[1]
+								this.p3[4] = this.p1[0] + 250
+								this.p3[5] = this.p1[1] 
+								this.p4[0] = this.p1[0] + 125 
+								this.p4[1] = this.p1[1] - 125
+								this.p4[2] = this.p1[0] + 125 
+								this.p4[3] = this.p1[1]
+								this.p4[4] = this.p1[0]
+								this.p4[5] = this.p1[1] 
+								this.p2[2] = this.p1[0] + 125 
+								this.p2[3] = this.p1[1]
+								this.p2[0] = this.p1[0] + 250
+								this.p2[1] = this.p1[1] 
+								this.p2[4] = this.p1[0] + 125
+								this.p2[5] = this.p1[1] + 125
+								this.p5[0] = this.p1[0] + 125
+								this.p5[1] = this.p1[1] + 125
+								this.p5[2] = this.p1[0]
+								this.p5[3] = this.p1[1] + 125
+								this.p5[4] = this.p1[0] 
+								this.p5[5] = this.p1[1] + 250    
+								
+						} else if (this.orientation == "o") {
+								this.p3[0] = this.p1[0] + 250
+								this.p3[1] = this.p1[1] + 125
+								this.p3[2] = this.p1[0] + 125
+								this.p3[3] = this.p1[1] + 125
+								this.p3[4] = this.p1[0] + 125
+								this.p3[5] = this.p1[1] + 250
+								this.p4[0] = this.p1[0] + 250
+								this.p4[1] = this.p1[1] + 125
+								this.p4[2] = this.p1[0] + 125
+								this.p4[3] = this.p1[1] + 125
+								this.p4[4] = this.p1[0] + 125
+								this.p4[5] = this.p1[1] 
+								this.p2[2] = this.p1[0] + 125
+								this.p2[3] = this.p1[1] + 125
+								this.p2[0] = this.p1[0] + 125
+								this.p2[1] = this.p1[1] + 250
+								this.p2[4] = this.p1[0] 
+								this.p2[5] = this.p1[1] + 125
+								this.p5[0] = this.p1[0] 
+								this.p5[1] = this.p1[1] + 125
+								this.p5[2] = this.p1[0] 
+								this.p5[3] = this.p1[1] 
+								this.p5[4] = this.p1[0] - 125
+								this.p5[5] = this.p1[1] 
+								
+						} else if (this.orientation == "n") {
+								this.p3[0] = this.p1[0] 
+								this.p3[1] = this.p1[1] + 250
+								this.p3[2] = this.p1[0]
+								this.p3[3] = this.p1[1] + 125
+								this.p3[4] = this.p1[0] - 125
+								this.p3[5] = this.p1[1] + 125
+								this.p4[0] = this.p1[0] 
+								this.p4[1] = this.p1[1] + 250
+								this.p4[2] = this.p1[0]
+								this.p4[3] = this.p1[1] + 125
+								this.p4[4] = this.p1[0] + 125
+								this.p4[5] = this.p1[1] + 125
+								this.p2[2] = this.p1[0]
+								this.p2[3] = this.p1[1] + 125
+								this.p2[0] = this.p1[0] - 125
+								this.p2[1] = this.p1[1] + 125
+								this.p2[4] = this.p1[0] 
+								this.p2[5] = this.p1[1]
+								this.p5[0] = this.p1[0] 
+								this.p5[1] = this.p1[1]
+								this.p5[2] = this.p1[0] + 125
+								this.p5[3] = this.p1[1] 
+								this.p5[4] = this.p1[0] + 125
+								this.p5[5] = this.p1[1] - 125
+						}
+
+				} else {
+			this.miroir = true;
 			if (this.orientation == "o") {
-				this.p3[0] += 125;this.p3[2] += 125;this.p3[4] += 375;
-				this.p2[0] +=375;this.p2[2] += 125; this.p2[4] += 125;
-				this.p4[0] += 125;this.p4[2] += 125;this.p4[4] -= 125;
-				this.p5[0] += 125;this.p5[2] -= 125;this.p5[4] -= 125;
+				this.p3[1] -= 125;this.p3[3] -= 125;this.p3[5] -= 375;
+				this.p2[1] -=375;this.p2[3] -= 125; this.p2[5] -= 125;
+				this.p4[1] -= 125;this.p4[3] -= 125;this.p4[5] += 125;
+				this.p5[1] -= 125;this.p5[3] += 125;this.p5[5] += 125;
 				
 			} else if (this.orientation == "n") {
 				this.p3[0] += 125;this.p3[2] += 125;this.p3[4] += 375;
@@ -1407,9 +1964,103 @@ class Piece5 extends Piece {
 				this.p2[0] -=375;this.p2[2] -= 125; this.p2[4] -= 125;
 				this.p4[0] -= 125;this.p4[2] -= 125;this.p4[4] += 125;
 				this.p5[0] -= 125;this.p5[2] += 125;this.p5[4] += 125;
-			}
+			}}
 			break;
 		case 9:
+			if (this.miroir) {
+				this.miroir = false;
+				if (this.orientation == "e") {
+							this.p4[0] = this.p1[0] - 125
+							this.p4[1] = this.p1[1] 
+							this.p4[2] = this.p1[0] 
+							this.p4[3] = this.p1[1] 
+							this.p4[4] = this.p1[0]    
+							this.p4[5] = this.p1[1] - 125
+							this.p5[0] = this.p1[0] - 125
+							this.p5[1] = this.p1[1] 
+							this.p5[2] = this.p1[0] 
+							this.p5[3] = this.p1[1]
+							this.p5[4] = this.p1[0]
+							this.p5[5] = this.p1[1] + 125
+							this.p3[2] = this.p1[0] 
+							this.p3[3] = this.p1[1] 
+							this.p3[0] = this.p1[0]    
+							this.p3[1] = this.p1[1] - 125
+							this.p3[4] = this.p1[0] + 125
+							this.p3[5] = this.p1[1]
+							this.p2[0] = this.p1[0] + 125
+							this.p2[1] = this.p1[1]
+
+					} else if (this.orientation == "s") {
+							this.p4[0] = this.p1[0] + 125
+							this.p4[1] = this.p1[1] - 125
+							this.p4[2] = this.p1[0] + 125
+							this.p4[3] = this.p1[1] 
+							this.p4[4] = this.p1[0] + 250
+							this.p4[5] = this.p1[1]
+							this.p5[0] = this.p1[0] + 125
+							this.p5[1] = this.p1[1] - 125
+							this.p5[2] = this.p1[0] + 125
+							this.p5[3] = this.p1[1] 
+							this.p5[4] = this.p1[0]
+							this.p5[5] = this.p1[1]
+							this.p3[2] = this.p1[0] + 125
+							this.p3[3] = this.p1[1] 
+							this.p3[0] = this.p1[0] + 250
+							this.p3[1] = this.p1[1]
+							this.p3[4] = this.p1[0] + 125
+							this.p3[5] = this.p1[1] + 125
+							this.p2[0] = this.p1[0] 
+							this.p2[1] = this.p1[1] + 125
+
+					} else if (this.orientation == "o") {
+
+							this.p4[0] = this.p1[0] + 250
+					this.p4[1] = this.p1[1] + 125
+					this.p4[2] = this.p1[0] + 125
+					this.p4[3] = this.p1[1] + 125
+					this.p4[4] = this.p1[0] + 125
+					this.p4[5] = this.p1[1] + 250
+					this.p5[0] = this.p1[0] + 250
+					this.p5[1] = this.p1[1] + 125
+					this.p5[2] = this.p1[0] + 125
+					this.p5[3] = this.p1[1] + 125
+					this.p5[4] = this.p1[0] + 125
+					this.p5[5] = this.p1[1] 
+					this.p3[2] = this.p1[0] + 125
+					this.p3[3] = this.p1[1] + 125
+					this.p3[0] = this.p1[0] + 125
+					this.p3[1] = this.p1[1] + 250
+					this.p3[4] = this.p1[0] 
+					this.p3[5] = this.p1[1] + 125
+					this.p2[0] = this.p1[0] - 125
+					this.p2[1] = this.p1[1] 
+
+					} else if (this.orientation == "n") {
+
+							this.p4[0] = this.p1[0] 
+					this.p4[1] = this.p1[1] + 250
+					this.p4[2] = this.p1[0] 
+					this.p4[3] = this.p1[1] + 125
+					this.p4[4] = this.p1[0] - 125
+					this.p4[5] = this.p1[1] + 125
+					this.p5[0] = this.p1[0] 
+					this.p5[1] = this.p1[1] + 250
+					this.p5[2] = this.p1[0] 
+					this.p5[3] = this.p1[1] + 125
+					this.p5[4] = this.p1[0] + 125
+					this.p5[5] = this.p1[1] + 125
+					this.p3[2] = this.p1[0] 
+					this.p3[3] = this.p1[1] + 125
+					this.p3[0] = this.p1[0] - 125
+					this.p3[1] = this.p1[1] + 125
+					this.p3[4] = this.p1[0] 
+					this.p3[5] = this.p1[1] 
+					this.p2[0] = this.p1[0] 
+					this.p2[1] = this.p1[1] - 125
+					}
+			} else {
+			this.miroir = true;
 			if (this.orientation == "o") {
 				this.p3[1] -= 375;this.p3[3] -= 125;this.p3[5] -= 125;
 				this.p4[1] -= 125;this.p4[3] -= 125;this.p4[5] -=375;
@@ -1427,10 +2078,103 @@ class Piece5 extends Piece {
 				this.p3[0] -= 375;this.p3[2] -= 125;this.p3[4] -= 125;
 				this.p4[0] -= 125;this.p4[2] -= 125;this.p4[4] -=375;
 				this.p5[0] -= 125;this.p5[2] -= 125;this.p5[4] += 125; 
-			}
+			}}
 			break;
 
 		case 10:
+			if (this.miroir) {
+				this.miroir = false;
+				if (this.orientation == "e") {
+							this.p5[0] = this.p1[0] 
+							this.p5[1] = this.p1[1] + 250 
+							this.p2[0] = this.p1[0] 
+							this.p2[1] = this.p1[1] - 125 
+							this.p5[2] = this.p1[0] 
+							this.p5[3] = this.p1[1] + 125
+							this.p5[4] = this.p1[0] + 125
+							this.p5[5] = this.p1[1] + 125
+							this.p4[0] = this.p1[0] + 125
+							this.p4[1] = this.p1[1] + 125
+							this.p4[2] = this.p1[0] + 125
+							this.p4[3] = this.p1[1] 
+							this.p4[4] = this.p1[0] + 250
+							this.p4[5] = this.p1[1] 
+							this.p3[0] = this.p1[0] + 125
+							this.p3[1] = this.p1[1] - 125
+							this.p3[2] = this.p1[0] + 125
+							this.p3[3] = this.p1[1] 
+							this.p3[4] = this.p1[0] + 250
+							this.p3[5] = this.p1[1] 
+
+					} else if (this.orientation == "s") {
+							this.p5[0] = this.p1[0] - 125
+							this.p5[1] = this.p1[1]
+							this.p2[0] = this.p1[0] + 125
+							this.p2[1] = this.p1[1]
+							this.p5[2] = this.p1[0]
+							this.p5[3] = this.p1[1]
+							this.p5[4] = this.p1[0] 
+							this.p5[5] = this.p1[1] + 125
+							this.p4[2] = this.p1[0] + 125
+							this.p4[3] = this.p1[1] + 125
+							this.p4[4] = this.p1[0] + 125
+							this.p4[5] = this.p1[1] + 250
+							this.p3[0] = this.p1[0] + 250
+							this.p3[1] = this.p1[1] + 125
+							this.p4[0] = this.p1[0] 
+							this.p4[1] = this.p1[1] + 125
+							this.p3[2] = this.p1[0] + 125
+							this.p3[3] = this.p1[1] + 125
+							this.p3[4] = this.p1[0] + 125
+							this.p3[5] = this.p1[1] + 250
+
+					} else if (this.orientation == "o") {
+							this.p5[0] = this.p1[0] + 125
+							this.p5[1] = this.p1[1] - 125 
+							this.p2[0] = this.p1[0] 
+							this.p2[1] = this.p1[1] + 125 
+							this.p5[2] = this.p1[0] + 125
+							this.p5[3] = this.p1[1] 
+							this.p5[4] = this.p1[0] 
+							this.p5[5] = this.p1[1] 
+							this.p4[2] = this.p1[0] 
+							this.p4[3] = this.p1[1] + 125
+							this.p4[4] = this.p1[0] - 125
+							this.p4[5] = this.p1[1] + 125
+							this.p3[0] = this.p1[0] 
+							this.p3[1] = this.p1[1] + 250
+							this.p4[0] = this.p1[0] 
+							this.p4[1] = this.p1[1] 
+							this.p3[2] = this.p1[0] 
+							this.p3[3] = this.p1[1] + 125
+							this.p3[4] = this.p1[0] - 125
+							this.p3[5] = this.p1[1] + 125
+
+					} else if (this.orientation == "n") {
+							this.p5[0] = this.p1[0] + 250
+							this.p5[1] = this.p1[1] + 125 
+							this.p2[0] = this.p1[0] - 125 
+							this.p2[1] = this.p1[1] 
+							this.p5[2] = this.p1[0] + 125
+							this.p5[3] = this.p1[1] + 125
+							this.p5[4] = this.p1[0] + 125
+							this.p5[5] = this.p1[1] 
+							this.p4[2] = this.p1[0] 
+							this.p4[3] = this.p1[1] 
+							this.p4[4] = this.p1[0] 
+							this.p4[5] = this.p1[1] - 125
+							this.p3[0] = this.p1[0] - 125
+							this.p3[1] = this.p1[1] 
+							this.p4[0] = this.p1[0] + 125
+							this.p4[1] = this.p1[1] 
+							this.p3[2] = this.p1[0] 
+							this.p3[3] = this.p1[1] 
+							this.p3[4] = this.p1[0] 
+							this.p3[5] = this.p1[1] - 125
+
+					}
+			} else {
+			this.miroir = true;
 			if (this.orientation == "o") {
 				this.p3[1] -= 375;this.p3[3] -= 125;this.p3[5] -= 125;
 				this.p2[1] -= 250;
@@ -1452,7 +2196,7 @@ class Piece5 extends Piece {
 				this.p2[0] -= 250;
 				this.p4[0] += 125;this.p4[2] -= 125;this.p4[4] -= 125;
 				this.p5[0] += 375;this.p5[2] += 125;this.p5[4] += 125;
-			}
+			}}
 			break;
 		}
 	}
