@@ -37,6 +37,11 @@ function setup() {
 	,0,makePiece5(455,80,"e",true,5),0,0,makePiece3(205,80,"e",true,8),makePiece5(580,580,"e",false,9)
 	,makePiece5(705,330,"o",false,10));
 
+	var pattern92 = new Pattern(92,0,makePiece4(205,580,"e",true,2),0,makePiece5(455,330,"s",false,4)
+	,makePiece5(455,80,"e",true,5),0,0,makePiece3(455,580,"o",true,8),0,0);
+	
+	var pattern95 = new Pattern(95,0,0,0,0,makePiece5(330,455,"n",true,5),0,makePiece3(330,80,"o",true,7),makePiece3(205,580,"e",false,8),makePiece5(580,80,"e",true,9),0);
+
 	patternD.push(pattern81);
 
 	selected = null;
@@ -135,15 +140,16 @@ function jouer() {
 
 	mode = slider.value();
 	print(mode);
+	rand = Math.floor(Math.random() * 4);
 	if (mode == 1) {
-		patternJeu = patternD[0];
-		solutionJeu = solutionD[0];
+		patternJeu = patternD[rand];
+		solutionJeu = solutionD[rand];
 	} else if (mode == 2) {
-		patternJeu = patternC[0];
-		solutionJeu = solutionC[0];
+		patternJeu = patternC[rand];
+		solutionJeu = solutionC[rand];
 	} else {
-		patternJeu = patternE[0];
-		solutionJeu = solutionE[0];
+		patternJeu = patternE[rand];
+		solutionJeu = solutionE[rand];
 	}
 
 	pieces = [];
