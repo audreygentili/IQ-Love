@@ -343,7 +343,7 @@ class Piece3 extends Piece {
 			  for(j=0; j<=4;j++){
 				if(sX >= 80 + 125 * i-1  && sX <= 205+ 125 * i-1 && sY >= 80 + 125 * j && sY <= 205 + 125 * j){
 				  this.p1[0] = 80 + 125*i
-				  this.p1[1] = 80 +125 * j
+				  this.p1[1] = sY
 				  this.p2[0] = this.p1[0]
 				  this.p2[1] = this.p1[1]
 				  this.p2[4] = this.p1[0] - 125
@@ -387,7 +387,7 @@ class Piece3 extends Piece {
 			  for(j=0; j<=4;j++){
 				if(sX >= 80 + 125 * i-1  && sX <= 205+ 125 * i-1 && sY >= 80 + 125 * j && sY <= 205 + 125 * j){
 				  this.p1[0] = 80 + 125*i
-				  this.p1[1] = 80 +125 * j
+				  this.p1[1] = sY
 				  this.p2[0] = this.p1[0]
 				  this.p2[1] = this.p1[1]
 				  this.p2[4] = this.p1[0] - 125
@@ -2000,6 +2000,7 @@ class Piece5 extends Piece {
 		}
 		}
 	}
+	
 }
 
 class Solution {
@@ -2033,3 +2034,5 @@ class Pattern {
 		this.p10 = p10;
 	}
 }
+
+
