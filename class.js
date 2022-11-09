@@ -2089,6 +2089,7 @@ class Piece5 extends Piece {
 		}
 		}
 	}
+	
 }
 
 class Solution {
@@ -2122,3 +2123,5 @@ class Pattern {
 		this.p10 = p10;
 	}
 }
+
+
