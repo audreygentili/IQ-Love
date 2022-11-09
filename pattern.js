@@ -4,9 +4,27 @@ var p3 = [];
 var p4 = [];
 var p5 = [];
 
+var pattern73 = new Solution(73,makePiece4(580,455,"e",false,1),makePiece4(580,580,"o",false,2),0,makePiece5(330,330,"o",false,4),makePiece5(330,80,"o",false,5),makePiece3(705,330,"n",false,6),
+makePiece3(580,205,"o",false,7),makePiece3(580,80,"o",false,8),0,makePiece5(330,580,"n",false,10));
+
+var pattern74 = new Solution(74,makePiece4(205,80,"e",false,1),0,makePiece4(455,580,"e",false,3),0,
+makePiece5(455,80,"o",false,5),makePiece3(205,455,"e",false,6),makePiece3(205,330,"o",false,7),makePiece3(80,455,"n",true,8),makePiece5(330,205,"o",false,9),makePiece5(705,455,"o",false,10));
+
 var pattern81 = new Pattern(81,0,makePiece4(205,205,"e",false,2),makePiece4(330,580,"e",false,3)
 ,0,makePiece5(455,80,"e",true,5),0,0,makePiece3(205,80,"e",true,8),makePiece5(580,580,"e",false,9)
 ,makePiece5(705,330,"o",false,10));
+
+var pattern89 = new Pattern(89,0,0,0,
+0,0,makePiece3(80,580,"o",true,6),0,
+makePiece3(455,205,"o",false,8),makePiece5(455,455,"e",false,9),makePiece5(80,205,"e",false,10));
+
+var pattern102 = new Pattern(102,0,makePiece4(330,330,"e",false,2),0,
+0,makePiece5(330,580,"e",false,5),makePiece3(80,580,"o",true,6),0,0,0,0);
+
+var pattern110 = new Pattern(110,makePiece4(580,455,"n",false,1),0,0,0,0,0,0,0,makePiece5(455,455,"s",true,9),0);
+
+var pattern112 = new Pattern(112,0,0,makePiece3(705,455,"n",false,3),makePiece5(455,580,"o",false,4),0,0,0,makePiece3(205,580,"e",false,8),0,0);
+
 
 patternD.push(pattern81);
 

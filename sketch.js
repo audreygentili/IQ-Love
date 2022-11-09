@@ -52,9 +52,9 @@ function setup() {
 	di.style('font-size', '32px');
 	di.style('color', '#ffffff');
 	di.style('text-align', 'center');
-	di.position(270, 350);
+	di.position((width/2)-100,height/4);
 	slider = createSlider(1, 3, 1, 1);
-	slider.position(330, 450);
+	slider.position((width/2)-100 + 70,height/3);
 	slider.style('width', '230px');
 	textSize(32);
 	fill(0, 102, 153);
