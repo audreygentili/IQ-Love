@@ -176,13 +176,32 @@ function state() {
 }
 
 function detecterFin(num) {
-	if (num == patterns[i].num) {
-		for(j=1; j <= 5; j++) {
-			rect(i*125-45, j*125-45, 125,125);
-		}
+	if (solutionJeu.p1[0] == piece1.p1[0] && solutionJeu.p1[1] == piece1.p1[1] &&
+		solutionJeu.p2[0] == piece2.p1[0] && solutionJeu.p2[1] == piece2.p1[1] &&	
+		solutionJeu.p3[0] == piece3.p1[0] && solutionJeu.p3[1] == piece3.p1[1] &&
+		solutionJeu.p4[0] == piece4.p1[0] && solutionJeu.p4[1] == piece4.p1[1] &&
+		solutionJeu.p5[0] == piece5.p1[0] && solutionJeu.p5[1] == piece5.p1[1] &&	
+		solutionJeu.p6[0] == piece6.p1[0] && solutionJeu.p6[1] == piece6.p1[1] &&
+		solutionJeu.p7[0] == piece7.p1[0] && solutionJeu.p7[1] == piece7.p1[1] &&
+		solutionJeu.p8[0] == piece8.p1[0] && solutionJeu.p8[1] == piece8.p1[1] &&	
+		solutionJeu.p9[0] == piece9.p1[0] && solutionJeu.p9[1] == piece9.p1[1] &&
+		solutionJeu.p10[0] == piece10.p1[0] && solutionJeu.p10[1] == piece10.p1[1] &&
+		
+		solutionJeu.p1[2] == piece1.orientation && solutionJeu.p2[2] == piece2.orientation &&
+		solutionJeu.p3[2] == piece3.orientation && solutionJeu.p4[2] == piece4.orientation &&	
+		solutionJeu.p5[2] == piece5.orientation && solutionJeu.p6[2] == piece6.orientation &&
+		solutionJeu.p7[2] == piece7.orientation && solutionJeu.p8[2] == piece8.orientation &&
+		solutionJeu.p9[2] == piece9.orientation && solutionJeu.p10[2] == piece10.orientation &&
+		
+		solutionJeu.p1[3] == piece1.miroir && solutionJeu.p2[3] == piece2.miroir &&
+		solutionJeu.p3[3] == piece3.miroir && solutionJeu.p4[3] == piece4.miroir &&	
+		solutionJeu.p5[3] == piece5.miroir && solutionJeu.p6[3] == piece6.miroir &&
+		solutionJeu.p7[3] == piece7.miroir && solutionJeu.p8[3] == piece8.miroir &&
+		solutionJeu.p9[3] == piece9.mirori && solutionJeu.p10[3] == piece10.miroir)
+	{
+		state();	
 	}
 }
-
 
 function selectedPiece() {
 	sX = mouseX;
