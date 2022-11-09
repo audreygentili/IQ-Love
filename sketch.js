@@ -140,7 +140,7 @@ function jouer() {
 
 	mode = slider.value();
 	print(mode);
-	rand = Math.floor(Math.random() * 4);
+	rand = Math.floor(Math.random() * 3);
 	if (mode == 1) {
 		patternJeu = patternD[rand];
 		solutionJeu = solutionD[rand];
@@ -340,13 +340,14 @@ function selectedPiece() {
 }
 
 function mousePressed() {
-	selectedPiece();
-	for (let i = 0; i < pieces.length; i++) {
-		if (pieces[i].nom == selected) {
-			pieces[i].pressed(mouseX, mouseY);
+	if (mouseX <= 830 && mouseX >= 80 && mouseY >= 80 && mouseY <= 705) {
+		selectedPiece();
+		for (let i = 0; i < pieces.length; i++) {
+			if (pieces[i].nom == selected) {
+				pieces[i].pressed(mouseX, mouseY);
+			}
 		}
 	}
-	print(mouseX, mouseY);
 }
 
 function mouseReleased() {
