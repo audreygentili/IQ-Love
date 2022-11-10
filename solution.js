@@ -55,12 +55,12 @@ var solution95 = new Solution(95,[330,205,"e",false],[80,205,"s",true],[580,580,
 [455,330,"e",false],[330,455,"n",true],[80,455,"n",false],[330,80,"o",true],
 [205,580,"e",false],[580,80,"e",true],[705,330,"o",true]);
 
-var solution102 = new Solution(102,[205,205,"e",false],[330,330,"e",false],[705,330,"s",true],
+var solution102 = new Solution(102,[205,205,"e",false],[330,330,"e",false],[705,205,"s",true],
 [455,455,"e",false],[330,580,"e",false],[80,580,"o",true],[455,80,"o",true],
 [205,80,"e",true],[705,455,"s",true],[455,205,"s",false]);
 
-var solution110 = new Solution(110,[580,455,"n",false],[205,330,"e",true],[705,580,"n",false],
-[205,205,"o",false],[455,205,"o",false],[80,455,"n",true],[330,80,"0",false],
+var solution110 = new Solution(110,[580,455,"n",false],[205,330,"e",true],[205,580,"o",true],
+[205,205,"o",false],[455,205,"o",false],[80,455,"n",true],[330,80,"o",false],
 [705,330,"n",false],[455,455,"s",true],[580,80,"s",false]);
 
 var solution112 = new Solution(112,[205,80,"e",false],[705,205,"s",false],[705,455,"n",false],[455,580,"o",false],[455,80,"o",false],

@@ -52,7 +52,7 @@ function setup() {
 
     var pattern110 = new Pattern(110,makePiece4(580,455,"n",false,1),0,0,0,0,0,0,0,makePiece5(455,455,"s",true,9),0);
 
-    var pattern112 = new Pattern(112,0,0,makePiece3(705,455,"n",false,3),makePiece5(455,580,"o",false,4),0,0,0,makePiece3(205,580,"e",false,8),0,0);
+    var pattern112 = new Pattern(112,0,0,makePiece4(705,455,"n",false,3),makePiece5(455,580,"o",false,4),0,0,0,makePiece3(205,580,"e",false,8),0,0);
 
 	var pattern92 = new Pattern(92,0,makePiece4(205,580,"e",true,2),0,makePiece5(455,330,"s",false,4)
 	,makePiece5(455,80,"e",true,5),0,0,makePiece3(455,580,"o",true,8),0,0);
