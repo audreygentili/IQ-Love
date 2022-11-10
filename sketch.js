@@ -91,7 +91,7 @@ function setup() {
 	start.mousePressed(state);
 
 	replay = createButton("Rejouer");
-	replay.position(width/2,500);
+	replay.position(350,500);
 	replay.size(200,100);
 	replay.mousePressed(state);
 
@@ -133,7 +133,7 @@ function draw() {
 		detecterFin();
 	}
 	if (gagner) {
-		di = createDiv('Bravo vous avez gagné !<br/>Votre score est de : '+score);
+		di = createDiv('Bravo vous avez gagné !<br/><br/>Votre score est de : '+score);
 		di.style('font-size', '32px');
 		di.style('color', '#ffffff');
 		di.style('text-align', 'center');
