@@ -146,22 +146,22 @@ function draw() {
 
 function jouer() {
 	rotate_left = createButton("rotate left <--");
-	rotate_left.position(50,1000);
+	rotate_left.position(50,1100);
 	rotate_left.size(200,100);
 	rotate_left.mousePressed(rotationL);
 
 	rotate_right = createButton("rotate right -->");
-	rotate_right.position(350,1000);
+	rotate_right.position(350,1100);
 	rotate_right.size(200,100);
 	rotate_right.mousePressed(rotationR);
 
 	mirror = createButton("|| mirror ||");
-	mirror.position(650,1000);
+	mirror.position(650,1100);
 	mirror.size(200,100);
 	mirror.mousePressed(rotationM);
 
 	home = createButton("Menu");
-	home.position(width/2,1200);
+	home.position(350,1300);
 	home.size(200,100);
 	home.mousePressed(state);
 
@@ -193,7 +193,7 @@ function jouer() {
 	}
 	if (patternJeu.p2 == 0) {
 		//bleu foncé
-		piece2 = makePiece4(900,120,"n",false,2);
+		piece2 = makePiece4(900,160,"n",false,2);
 		//piece2 = new Piece4(2, 4, "s", false, color(3,13,182), [705,205,125,125], [705,80,125,125], [830,330,705,455,705,330], [705,205,705,80,580,80]);
 		append(pieces, piece2);
 	} else {
@@ -202,7 +202,7 @@ function jouer() {
 	}
 	if (patternJeu.p3 == 0) {
 		//jaune
-		piece3 = makePiece4(900,160,"n",false,3);
+		piece3 = makePiece4(900,220,"n",false,3);
 		//piece3 = new Piece4(3, 4, "n", false, color(235,238,24), [705,455,125,125], [705,580,125,125], [705,455,830,330,830,455], [580,580,705,705,705,580]);
 		append(pieces, piece3);
 	} else {
@@ -211,7 +211,7 @@ function jouer() {
 	}
 	if (patternJeu.p4 == 0) {
 		//orange 
-		piece4 = makePiece5(900,200,"n",false,4);
+		piece4 = makePiece5(900,280,"n",false,4);
 		//piece4 = new Piece5(4, 5, "o", false, color(214,122,21), [455,580,125,125], [330,455,125,125], [330,580,455,705,455,580], [455,580,455,455,580,580], [580,580,580,705,705,705]);
 		append(pieces, piece4);
 	} else {
@@ -220,7 +220,7 @@ function jouer() {
 	}
 	if (patternJeu.p5 == 0) {
 		//violet 
-		piece5 = makePiece5(900,240,"n",false,5);
+		piece5 = makePiece5(900,340,"n",false,5);
 		//piece5 = new Piece5(5, 5, "o", false, color(88,0,138), [455,80,125,125], [580,330,580,205, 455,205], [705,205,580,205,580,330], [705,205,580,205,580,80], [455,205,455,80,330,80]);
 		append(pieces, piece5);
 	} else {
@@ -229,7 +229,7 @@ function jouer() {
 	}
 	if (patternJeu.p6 == 0) {
 		//rouge
-		piece6 = makePiece3(900,280,"n",false,6);
+		piece6 = makePiece3(900,400,"n",false,6);
 		//piece6 = new Piece3(6, 3, "n", false, color(255,0,0),[80,455,125,125], [205,455,125,125], [80,330,80,455,205,455]);
 		append(pieces, piece6);
 	} else {
@@ -238,7 +238,7 @@ function jouer() {
 	}
 	if (patternJeu.p7 == 0) {
 		//bleu clair
-		piece7 = makePiece3(900,320,"n",false,7);
+		piece7 = makePiece3(900,460,"n",false,7);
 		//piece7 = new Piece3(7, 3, "o", false, color(83,225,230), [205,330,125,125],  [330,330,330,455,455,455], [205,455,205,330,80,330]);
 		append(pieces, piece7);
 	} else {
@@ -247,7 +247,7 @@ function jouer() {
 	}
 	if (patternJeu.p8 == 0) {
 		//vert foncé
-		piece8 = makePiece3(900,360,"n",false,8);
+		piece8 = makePiece3(900,520,"n",false,8);
 		//piece8 = new Piece3(8, 3, "e", false, color(2,122,36), [205,580,125,125], [80,580,125,125], [330,705,455,705,330,580]);
 		append(pieces, piece8);
 	} else {
@@ -256,7 +256,7 @@ function jouer() {
 	}
 	if (patternJeu.p9 == 0) {
 		//rose
-		piece9 = makePiece5(900,400,"n",false,9);
+		piece9 = makePiece5(900,580,"n",false,9);
 		//piece9 = new Piece5(9, 5, "o", false, color(253,50,158), [330,205,125,125], [205,205,125,125], [455,455,455,330,330,330], [580,330,455,330,455,455], [580,330,455,330,455,205]);
 		append(pieces, piece9);
 	} else {
@@ -265,7 +265,7 @@ function jouer() {
 	}
 	if (patternJeu.p10 == 0) {
 		//cyan
-		piece10 = makePiece5(900,440,"n",false,10);
+		piece10 = makePiece5(1000,580,"n",false,10);
 		//piece10 = new Piece5(10, 5, "o", false, color(76,207,184), [580,330,125,125], [580,455,125,125], [580,580,580,455,455,455], [580,330,580,455,455,455], [705,205,705,330,580,330]);
 		append(pieces, piece10);
 	} else {
